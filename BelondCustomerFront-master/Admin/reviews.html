@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <title>Admin Dashboardd</title>
+
+    <!-- Link to css -->
+    <link rel="stylesheet" href="./admin.css">
+    <link rel="stylesheet" href="../index.css">
+    <!-- Link to icons -->
+   
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Link swiper css -->
+    <link rel="stylesheet" href="./swiper-bundle.min.css">
+</head>
+<body>
+
+    <div class="adminDasboard flex">
+
+        <div class="sideMenu">
+            <div class="logoDiv flex">
+                <!-- <img src="../Assets/logo.webp" alt="Logo Image"> -->
+                <h3>Belmond</h3>
+            </div>
+          <div class="menu">
+            <ul class="menuItem grid">
+                <li class="menuList flex">
+                    <a href="admin.html" class="menuLink linkActive flex">
+                        <i class="uil uil-create-dashboard icon"></i>
+                        <span class="text">Dashboard</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex">
+                    <a href="./properties.html" class="menuLink flex">
+                        <i class="uil uil-building icon"></i>
+                        <span class="text">Room & Suites</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex"> 
+                    <a href="bookings.html" class="menuLink flex">
+                        <i class="uil uil-book-open icon"></i>
+                        <span class="text">Bookings</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex">
+                    <a href="todo.html" class="menuLink flex">
+                        <i class="uil uil-clipboard-alt icon"></i>
+                        <span class="text">To do</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex"> 
+                    <a href="guests.html" class="menuLink flex">
+                        <i class="uil uil-user-circle icon"></i>
+                        <span class="text">Guests</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex"> 
+                    <a href="admins.html" class="menuLink flex">
+                        <i class="uil uil-key-skeleton icon"></i>
+                        <span class="text">Administrators</span>
+                    </a>
+                </li>
+
+                <li class="menuList flex"> 
+                    <a href="reviews.html" class="menuLink flex">
+                        <i class="uil uil-comment-message icon"></i>
+                        <span class="text">Reviews</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex"> 
+                    <a href="careers.html" class="menuLink flex">
+                        <i class="uil uil-graduation-cap icon"></i>
+                        <span class="text">Careers</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex"> 
+                    <a href="calender.html" class="menuLink flex">
+                        <i class="uil uil-calendar-alt icon"></i>
+                        <span class="text">Calendar</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex"> 
+                    <a href="updates.html" class="menuLink flex">
+                        <i class="uil uil-bell icon"></i>
+                        <span class="text">Updates</span>
+                    </a>
+                </li> 
+            </ul>
+          </div>
+
+          <div class="accountDiv">
+            <div class="imgDiv">
+                <img src="../Assets/user (8).webp" alt="Admin Image">
+            </div>
+            <span class="name">燕西 管理员</span>
+            <p></p>
+
+            <div class="accountBtns flex">
+                <a href="../login.html">
+                    <button class="btn bg flex">
+                        <i class="uil uil-sign-out-alt icon"></i>
+                        Log Out
+                    </button>
+                </a>
+                <a href="settings.html">
+                    <button class="btn bg flex">
+                        <i class="uil uil-setting icon"></i>
+                    </button>
+                </a>
+            </div>
+           
+          </div>
+        </div>
+
+        <div class="reviewBody">
+            <div class="top flex greyBg">
+                <h1 class="titleText">
+                   Clients Reviews
+                </h1>
+                
+                <p>Reviews are what makes our work improved!</p>
+            </div>
+
+            <div class="reviewSection">
+                <div class="semi_navBar flex">
+                    <span class="menuItem activeList" data-filter="all">All</span>
+                    <span class="menuItem" data-filter="pending">Pending</span>
+                    <span class="menuItem" data-filter="published">Published</span>
+                </div>
+                <div class="reviewHeading flex">
+                 <table>
+
+                    <tr class="tr">
+                        <th>Type</th>
+                        <th>Reviewer</th>
+                        <th>Review</th>
+                        <th>Status</th>
+                    </tr>
+
+                    <tr class="dataItem live" data-item="published">
+                        <td>
+                           <i class='bx bxs-message-square-dots icon' ></i>
+                          <h4>Agent Review</h4>
+                        </td>
+
+                       <td>
+                         <div class="reviewer flex">
+                            <img src="../Assets/user (5).webp" alt="">
+                            <div>
+                              <h4>Christine Loro</h4>
+                            <p>Italy</p>
+                            </div>
+                         </div>
+                        </td>
+
+                       <td>
+                          <h5>Great support from the agent!</h5>
+                          <p>He helped all through the process to check me the house. He ensured that my payment was made in time to the outsourced services. Great Job! </p>
+                       </td>
+
+                        <td>
+                            <div class=" statusTd flex">
+                                <p>2022/10/14</p>
+                                <span class="published">
+                                    Published
+                                </span>
+
+                                <i class='bx bx-dots-horizontal-rounded dotsIcon icon'></i>
+
+                                <form action="" class="updateStatus ">
+                                    <h4>Update Status</h4>
+                                    <select name="reviewStatus" id="" value="pending">
+                                        <option value="pending">
+                                            Peinding
+                                        </option>
+
+                                        <option value="published">
+                                            Published
+                                        </option>
+                                       
+                                    </select>
+                                    <button name="submit" class="btn bg flex"> Update <i class="uil uil-cloud-redo icon"></i></button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="dataItem live" data-item="published">
+                        <td>
+                            <i class='bx bxs-message-square-dots icon' ></i>
+                           <h4>Property Review</h4>
+                        </td>
+
+                       <td>
+                          <div class="reviewer flex">
+                                <img src="../Assets/user (2).webp" alt="">
+                                <div>
+                                <h4>Christine Loro</h4>
+                                <p>Texas, USA</p>
+                                </div>
+                          </div>
+                       </td>
+
+                       <td>
+                          <h5>I like this property</h5>
+                          <p>This apaertment has enoughh free parkiing and great securoty protocal.</p>
+                       </td>
+
+                       <td>
+                         <div class="statusTd flex">
+                            <p>2022/10/14</p>
+
+                            <span class="published">
+                               Published
+                           </span>
+   
+                           <i class='bx bx-dots-horizontal-rounded dotsIcon icon'></i>
+                           <form action="" class="updateStatus ">
+                            <h4>Update Status</h4>
+                            <select name="reviewStatus" id="" value="pending">
+                                <option value="pending">
+                                    Peinding
+                                </option>
+
+                                <option value="published">
+                                    Published
+                                </option>
+                               
+                            </select>
+                            <button name="submit" class="btn bg flex"> Update <i class="uil uil-cloud-redo icon"></i></button>
+                        </form>
+                        </div>
+                       
+                     </td>
+                    </tr>
+
+                    <tr class="dataItem live" data-item="pending">
+                        <td>
+                            <i class='bx bxs-message-square-dots icon' ></i>
+                           <h4>Agent Review</h4>
+                        </td>
+
+                       <td>
+                            <div class="reviewer flex">
+                                <img src="../Assets/user (1).webp" alt="">
+                                <div>
+                                <h4>Nimusiima Tan</h4>
+                                <p>Morocco</p>
+                                </div>
+                            </div>
+                     </td>
+
+                       <td>
+                          <h5>Great support from the agent!</h5>
+                          <p>He helped all through the process to check me the house. He ensured that my payment was made in time to the outsourced services. Great Job! </p>
+                       </td>
+
+                       <td>
+                         <div class="statusTd flex">
+                            <p>2022/10/14</p>
+                        <span class="pending">
+                            Pending
+                        </span>
+
+                        <i class='bx bx-dots-horizontal-rounded dotsIcon icon'></i>
+                         </div>
+                        
+                      </td>
+                    </tr>
+
+                    <tr class="dataItem live" data-item="published">
+                        <td>
+                            <i class='bx bxs-message-square-dots icon' ></i>
+                           <h4>Property Review</h4>
+                        </td>
+
+                       <td>
+                           <div class="flex reviewer">
+                                <img src="../Assets/user (1).webp" alt="">
+                                <div>
+                                <h4>Abaho Jackie</h4>
+                                <p>Jameica</p>
+                                </div>
+                           </div>
+                     </td>
+
+                       <td>
+                          <h5>Great support from the agent!</h5>
+                          <p>He helped all through the process to check me the house. He ensured that my payment was made in time to the outsourced services. Great Job! </p>
+                       </td>
+
+                       <td>
+                            <div class="flex statusTd">
+                                <p>2022/10/14</p>
+
+                                <span class="published">
+                                    Published
+                                </span>
+
+                                <i class='bx bx-dots-horizontal-rounded dotsIcon icon'></i>
+                            </div>
+                     </td>
+                    </tr>
+
+                 </table>
+                </div>
+            </div>
+        </div>    
+    </div>    
+
+
+    <!-- Link admin.js -->
+    <script src="./admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <title>Admin Dashboardd</title>
+
+    <!-- Link to css -->
+    <link rel="stylesheet" href="./admin.css">
+    <link rel="stylesheet" href="../index.css">
+    <!-- Link to icons -->
+   
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Link swiper css -->
+    <link rel="stylesheet" href="./swiper-bundle.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="api.js"></script>
+    <script src="detailsImage.js"></script>
+</head>
+<body>
+
+    <div class="adminDasboard flex">
+
+        <div class="sideMenu">
+            <div class="logoDiv flex">
+                <img src="../Assets/logo.webp" alt="Logo Image" style="width: 100px; height: 100px;">
+            </div>
+          <div class="menu">
+            <ul class="menuItem grid">
+                <li class="menuList flex" id="dashboardTab" style="display: block;">
+                    <a href="dashboard.html" class="menuLink linkActive flex Active">
+                        <i class="uil uil-create-dashboard icon"></i>
+                        <span class="text">Dashboard</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex">
+                    <a href="booking.html" class="menuLink flex">
+                        <i class="uil uil-building icon"></i>
+                        <span class="text">Bookings</span>
+                    </a>
+                </li> 
+                <li class="menuList flex">
+                    <a href="detailsImage.html" class="menuLink flex">
+                        <i class="uil uil-building icon"></i>
+                        <span class="text">Detail Image</span>
+                    </a>
+                </li>
+                <li class="menuList flex"> 
+                    <a href="withdraw.html" class="menuLink flex">
+                        <i class="uil uil-book-open icon"></i>
+                        <span class="text">Withdraw List</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex">
+                    <a href="premium.html" class="menuLink flex">
+                        <i class="uil uil-clipboard-alt icon"></i>
+                        <span class="text">Premium</span>
+                    </a>
+                </li> 
+                <li class="menuList flex"> 
+                    <a href="user.html" class="menuLink flex">
+                        <i class="uil uil-user-circle icon"></i>
+                        <span class="text">Users</span>
+                    </a>
+                </li> 
+                
+                <li class="menuList flex"> 
+                    <a href="deposit.html" class="menuLink flex">
+                        <i class="uil uil-key-skeleton icon"></i>
+                        <span class="text">Deposit Details</span>
+                    </a>
+                </li>
+
+                <li class="menuList flex"> 
+                    <a href="commision.html" class="menuLink flex">
+                        <i class="uil uil-comment-message icon"></i>
+                        <span class="text">Commision</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex"> 
+                    <a href="bonus.html" class="menuLink flex">
+                        <i class="uil uil-money-bill icon"></i>
+                        <span class="text">Bonus Details</span>
+                    </a>
+                </li> 
+                
+                <li class="menuList flex" id="aboutUsTab" style="display: block;"> 
+                    <a href="about.html" class="menuLink flex">
+                        <i class="uil uil-file-info-alt icon"></i>
+                        <span class="text">About Us</span>
+                    </a>
+                </li> 
+                
+                <li class="menuList flex" id="socialMediaTab" type="display:block"> 
+                    <a href="media.html" class="menuLink flex">
+                        <i class="uil uil-whatsapp icon"></i>
+                        <span class="text">Social Media</span>
+                    </a>
+                </li> 
+                
+
+                <li class="menuList flex" id="adminTab" style="display: block;"> 
+                    <a href="admins.html" class="menuLink flex">
+                        <i class="uil uil-user-circle icon"></i>
+                        <span class="text">Admins</span>
+                    </a>
+                </li> 
+            </ul>
+          </div>
+
+          <div class="accountDiv">
+            
+
+            <div class="accountBtns flex">
+                <a onclick="logout()">
+                    <button class="btn bg flex">
+                        <i class="uil uil-sign-out-alt icon"></i>
+                        Log Out
+                    </button>
+                </a>
+            </div>
+           
+          </div>
+        </div>
+
+        <div class="addPropertyBody">
+            <div class="top flex">
+                <h1 class="titleText">
+                    Add New Booking
+                </h1>
+                <p>Creating an amazing booking experience at the Belmond hotel</p>
+            </div>
+
+            <div class="newPropertyDiv">
+                <h3 class="formTitle">Completely fill the form below!</h3>
+
+                <form method="" class="flex" enctype="multipart/form-data">
+                   <div>
+
+                    <div class="singleField">
+                        <label for="propImage">Choose Image <small>(Main)</small></label>
+                        <input type="file" accept="image/webp" name="propImage" id="propImage" required>
+                    </div>
+
+                        <!-- <div class="singleField">
+                            <label for="propName"> Name</label>
+                            <input type="text" name="propName" id="propName" placeholder="e.g: Booking Hotel" required>
+                        </div> -->
+
+                        <!-- <div class="singleField">
+                            <label for="propPrice">Price</label>
+                            <input type="text" name="propPrice" id="propPrice" placeholder="e.g: 300" required>
+                        </div>
+
+                        <div class="singleField">
+                            <label for="propLocation">Details</label>
+                            <input type="text" name="propLocation" id="propLocation" placeholder="Booking Details" required>
+                        </div> -->
+                        <!-- <button class="btn flex bg" id="saveBtn" style="display: block;">
+                            <i class="uil uil-plus icon"></i>
+                            Add Booking
+                        </button> -->
+                        <button class="btn flex bg" id="updateBtn">
+                            <i class="uil uil-plus icon"></i>
+                            Update Booking
+                        </button>
+                   </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>   
+
+</body>
+</html>    
+
+<script src="constant.js"></script>
+<link rel="stylesheet" href="constant.css">
+<script>
+    $(document).ready(function() {
+        var urlParams = new URLSearchParams(window.location.search);
+    var param1Value  = parseInt(urlParams.get('id'));
+    if(urlParams.size!==0){
+        editBooking(param1Value);
+    }
+    });
+</script>
+
+<script src="roleWiseAuth.js"></script>

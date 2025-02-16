@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <title>Belmond</title>
+
+    <!-- Link css  -->
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="homestyle.css">
+
+    <!-- Link to icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Link swiper css -->
+    <link rel="stylesheet" href="./swiper-bundle.min.css">
+
+    <!-- Link to AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+   
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+<div id="notification" class="notification">
+    <p id="notification-text"></p>
+  </div>
+<body onload="checkLogin()">
+    <div class="header flex">
+        <div class="logoDiv">
+           <a href="index.html" class="flex">
+            <h2 style="color: #fff;">BELMOND</h1>
+            <!-- <img loading="lazy"  src="./Assets/logo.webp" alt="Logo Image"> -->
+           </a>
+        </div>
+
+        <div class="navBar" id="navBar">
+            <ul class="menu flex">
+                <li class="menuList">
+                    <a href="#" class="navLink">Home</a>
+                </li>
+                <li class="menuList">
+                    <a href="#rooms" class="navLink"> Rooms</a>
+                </li>
+                <li class="menuList">
+                    <a href="#amenities" class="navLink">Restaurants</a>
+                </li>
+                <li class="menuList">
+                    <a href="#amenities" class="navLink">Event space</a>
+                </li>
+                <li class="menuList">
+                    <a href="details.html" class="navLink">Features</a>
+                </li>
+                
+                <li class="menuList">
+                    <a href="contactPage.html" class="navLink">Contact Us</a>
+                </li>
+                <li class="menuList">
+                    <select class="menuList" onchange="handleSelection(this)">
+                        <option style="color: black;" class="navLink" id="userName"></option>
+                        <option onclick="logout()" value="logout" class="navLink">Logout</option>
+                    </select>
+                </li>
+               </ul>
+           <div class="closeNavbar" id="closeNavbar">
+            <i class="uil uil-times-circle icon"></i>
+        </div>
+        </div>
+
+        <div class="toggleNavbaIcon" id="toggleNavbaIcon">
+            <i class="uil uil-bars icon"></i>
+        </div> 
+    </div>
+    <!-- Header Div Ends-->
+ <div class="heroSection">
+
+    <section class="sliderhome">
+        <div class="list">
+            <div class="item active">
+                <div class="image" style="--url: url('sliderhomeimages/1.webp')">
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="item">
+                <div class="image" style="--url: url('sliderhomeimages/2.webp')">
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="item">
+                <div class="image" style="--url: url('sliderhomeimages/3.webp')">
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- ABOUT SECTION  -->
+    <div class="section container aboutSection" id="about">
+        <div class="sectionContent flex">
+            <div class="imgDiv">
+                <img loading="lazy"  class="mainImage" src="./Assets/hotel6.webp" alt="Best Hotel in Italy">
+                <img loading="lazy"  class="smallImage" src="./Assets/hotel.webp" alt="Best Hotel in Italy">
+            </div>
+
+            <div class="aboutText">
+                <div class="flex stars">
+                    <i class='bx bxs-star icon'></i>
+                    <i class='bx bxs-star icon'></i>
+                    <i class='bx bxs-star icon'></i>
+                    <i class='bx bxs-star icon'></i>
+                    <i class='bx bxs-star icon'></i>
+                </div>
+
+                <span class="subTitle">
+                    the most luxurious hotel in Italy
+                </span>
+
+                <span class="secTitle">
+                    Enjoy a Luxury Experience 
+                </span>
+
+                <p class="desc">
+                    Welcome to the Best New Hotel in Entebbe, Italy. A large, family-friendly option with a prime location for leisure and business travellers alike. Comfortably furnished with premium beds our rooms are equipped with all amenities including air conditioning, Smart TVs, Wi-Fi internet access and clean private bathrooms. 
+                </p>
+                <br>
+                
+                <div class="checkList grid">
+                    <div class="singleCheck flex">
+                        <i class="uil uil-check-circle icon"></i>
+                        <p>Customer Rewards Program and excellent technology.</p>
+                    </div>
+                    <div class="singleCheck flex">
+                        <i class="uil uil-check-circle icon"></i>
+                        <p>24 Month / 24,000km Nationwide Warranty monotone.</p>
+                    </div>
+                    <div class="singleCheck flex">
+                        <i class="uil uil-check-circle icon"></i>
+                        <p>Curabitur dapibus nisl a urna congue, in pharetra urna accumsan.</p>
+                    </div>
+                </div>
+                    <button class="btn flex bg" id="successBtn" type="button" onclick="openModal()">
+                        Go BELMOND
+                    </button>
+                    <!-- <div class="homemodal" id="myModal">
+                        <div class="modal-content">
+                         <span class="close" onclick="closeModal()">
+                          ×
+                         </span>
+                         <div class="content active" id="bookingInf">
+                         <img loading="lazy"  loading="lazy"  class="modal-image" alt="Placeholder image of a scenic landscape with mountains and a river" class="w-full h-auto rounded-lg shadow-md" height="150" src="../Hotel/Assets/island.webp" width="100%"/>
+                         <h2 class="text-2xl font-bold mt-4 mb-2 modal-heading">
+                          Choose Your Options
+                         </h2>
+                         <div class="checkbox-container">
+                          <input class="mr-2" id="option1" type="checkbox"/>
+                          <label for="option1">
+                           Clean and Nice Place to stay
+                          </label>
+                         </div>
+                         <div class="checkbox-container">
+                          <input class="mr-2" id="option2" type="checkbox"/>
+                          <label for="option2">
+                            Reasonable price for facilities
+                          </label>
+                         </div>
+                         <div class="checkbox-container">
+                          <input class="mr-2" id="option3" type="checkbox"/>
+                          <label for="option3">
+                            Perfect place to stay in vacation
+                          </label>
+                         </div>
+                         <div class="checkbox-container">
+                          <input class="mr-2" id="option4" type="checkbox"/>
+                          <label for="option4">
+                            Relax and calm environment to stay
+                          </label>
+                         </div>
+                         <div class="checkbox-container">
+                          <input class="mr-2" id="option5" type="checkbox"/>
+                          <label for="option5">
+                            Hotel staff very Friendly, polite and treat well
+                          </label>
+                         </div>
+                         <button type="button" onclick="addBooking()" class="btn flex bg" id="belmondSubmit">
+                          Go BELMOND
+                         </button>
+                        </div>
+                    </div>
+                </div> -->
+                    <div id="treasureAlert" class="modal-overlay">
+                        <div class="modal" id="modal1">
+                            <!-- <h2>Treasure Box</h2> -->
+                            <div style="display: inline-flex">
+                                <div class="treasure-box" style="margin-right: 5%;"  id="treasureBox1">
+                                    <div class="lid"></div>
+                                    <div class="box">
+                                        <div class="coins">
+                                            <div class="coin"></div>
+                                            <div class="coin"></div>
+                                            <div class="coin"></div>
+                                            <div class="coin"></div>
+                                        </div>
+                                        <div class="gems">
+                                            <div class="gem gem-1"></div>
+                                            <div class="gem gem-2"></div>
+                                            <div class="gem gem-3"></div>
+                                        </div>
+                                        <div class="sparkles">
+                                            <div class="sparkle"></div>
+                                            <div class="sparkle"></div>
+                                            <div class="sparkle"></div>
+                                        </div>
+                                        <div class="inner-glow"></div>
+                                    </div>
+                                    <div class="shine"></div>
+                                    <div class="glow"></div>
+                                    <div class="light-rays"></div>
+                                    <div class="particles">
+                                        <div class="particle"></div>
+                                        <div class="particle"></div>
+                                        <div class="particle"></div>
+                                        <div class="particle"></div>
+                                        <div class="particle"></div>
+                                    </div>
+                                </div>
+                                <div class="treasure-box" style="margin-right: 5%;" id="treasureBox2">
+                                    <div class="lid"></div>
+                                    <div class="box">
+                                        <div class="coins">
+                                            <div class="coin"></div>
+                                            <div class="coin"></div>
+                                            <div class="coin"></div>
+                                            <div class="coin"></div>
+                                        </div>
+                                        <div class="gems">
+                                            <div class="gem gem-1"></div>
+                                            <div class="gem gem-2"></div>
+                                            <div class="gem gem-3"></div>
+                                        </div>
+                                        <div class="sparkles">
+                                            <div class="sparkle"></div>
+                                            <div class="sparkle"></div>
+                                            <div class="sparkle"></div>
+                                        </div>
+                                        <div class="inner-glow"></div>
+                                    </div>
+                                    <div class="shine"></div>
+                                    <div class="glow"></div>
+                                    <div class="light-rays"></div>
+                                    <div class="particles">
+                                        <div class="particle"></div>
+                                        <div class="particle"></div>
+                                        <div class="particle"></div>
+                                        <div class="particle"></div>
+                                        <div class="particle"></div>
+                                    </div>
+                                </div>
+                              <div class="treasure-box" id="treasureBox3">
+                                <div class="lid"></div>
+                                <div class="box">
+                                    <div class="coins">
+                                        <div class="coin"></div>
+                                        <div class="coin"></div>
+                                        <div class="coin"></div>
+                                        <div class="coin"></div>
+                                    </div>
+                                    <div class="gems">
+                                        <div class="gem gem-1"></div>
+                                        <div class="gem gem-2"></div>
+                                        <div class="gem gem-3"></div>
+                                    </div>
+                                    <div class="sparkles">
+                                        <div class="sparkle"></div>
+                                        <div class="sparkle"></div>
+                                        <div class="sparkle"></div>
+                                    </div>
+                                    <div class="inner-glow"></div>
+                                </div>
+                                <div class="shine"></div>
+                                <div class="glow"></div>
+                                <div class="light-rays"></div>
+                                <div class="particles">
+                                    <div class="particle"></div>
+                                    <div class="particle"></div>
+                                    <div class="particle"></div>
+                                    <div class="particle"></div>
+                                    <div class="particle"></div>
+                                </div>
+                            </div>
+                            <input type="text" hidden id="treasureamount">
+                              <div class="treasure-message" id="treasureMessage"></div>
+                            </div>
+                        </div>
+                    </div>
+                <div class="slidermodal" id="successModal">
+                    <div class="slidermodal-content">
+                        <span class="close" onclick="closeModal()">
+                            ×
+                           </span>
+                        <div class="content active" id="bookingInf">
+                        </div>
+                        <p>Rating: <span class="star-rating">
+                            <label for="rate-1" style="--i:1"><i class="fa-solid fa-star"></i></label>
+                            <input type="radio" name="rating" id="rate-1" value="1">
+                            <label for="rate-2" style="--i:2"><i class="fa-solid fa-star"></i></label>
+                            <input type="radio" name="rating" id="rate-2" value="2" >
+                            <label for="rate-3" style="--i:3"><i class="fa-solid fa-star"></i></label>
+                            <input type="radio" name="rating" id="rate-3" value="3">
+                            <label for="rate-4" style="--i:4"><i class="fa-solid fa-star"></i></label>
+                            <input type="radio" name="rating" id="rate-4" value="4">
+                            <label for="rate-5" style="--i:5"><i class="fa-solid fa-star"></i></label>
+                            <input type="radio" name="rating" id="rate-5" value="5">
+                        </span></p>
+                      <button style="margin-top:20px" id="belmondSubmit" type="button" onclick="addBooking()">Confirm</button>
+                    </div>
+                  </div>    
+                  
+                <button class="btn bg1">
+                          BELMOND Count: <p id="bookingCount"></p>
+                     </button>
+                     <div id="completeBAlert" style="display: none; margin-top:20px">
+                        <!-- <p style="color: red;">Contact customer service to continue</p> -->
+                        <svg id="whatsapp" onclick="gotoWhatsapp()" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-whatsapp" style="color:#075e54; margin: 10px" viewBox="0 0 16 16">
+                            <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                          </svg>
+                          <svg id="telegram" onclick="gotoTelegram()" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-telegram" style="color:#0088cc; margin: 10px" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"/>
+                          </svg>
+                    </div>
+                     <div class="deposit-modal" id="modal-deposit">
+                        <!-- Modal Content -->
+                        <form class="deposit-modal-content" id="deposit-form">
+                            <button type="button" onclick="closeDepositModal()" class="modal-close-btn">×</button>
+                          <!-- Close Button -->
+                          <!-- Title -->
+                          <h3 class="modal-title" id="shotModalText">Belmond Prime</h3>
+                          <!-- Notification Text -->
+                          <p class="modal-text">
+                            Your balance is low, please <a href="#" class="modal-link">deposit</a> to continue.
+                          </p>
+                          <!-- Purchase Info -->
+                          <p class="modal-text">Your purchase</p>
+                          <p class="modal-text">
+                            Please go to the <a href="#" class="modal-link">wallet</a> page if your deposit was completed.
+                          </p>
+                          <!-- Amount Info -->
+                          <div class="amount-container">
+                            <p class="modal-text">
+                              Amount Need to <span class="highlight-text">deposit</span>:
+                            </p>
+                            <p id="paymentNeedDeposit" class="amount">₹ 138,006</p>
+                          </div>
+                          <!-- Bonus and Contact Info -->
+                          <p class="modal-text highlight-text" id="commissionLine">Belmond Bonus 5X Commission</p>
+                          <p class="modal-text">Please contact below to deposit the amount:</p>
+                          <!-- Contact Icons -->
+                          <div class="modal-icons">
+                            <a id="whatsapp" onclick="gotoWhatsapp()">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-whatsapp" style="color:#25D366;">
+                                <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+                              </svg>
+                            </a>
+                            <a id="telegram" onclick="gotoTelegram()">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-telegram" style="color:#0088CC;">
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09" />
+                              </svg>
+                            </a>
+                          </div>
+                        </form>
+                      </div>
+               
+            
+        </div>
+    </div>
+    <!-- ABOUT SECTION ENDS -->
+
+    <!-- ROOMS & SUITES SECTION -->
+    <div class="section  roomsSection" id="rooms">
+        <div class="sectionContainer container">
+            <div class="sectionIntro">
+                <span class="subTitle">
+                    the most luxurious hotel in Italy
+                </span>
+                <span class="secTitle">
+                    Our Rooms & Suites
+                </span>
+            </div>
+
+            <div class="bannerroom">
+                <div class="slider" style="--quantity: 10">
+                    <div class="item" style="--position: 2"><img loading="lazy"   src="room_slider/images/dragon_2.webp" alt=""></div>
+                    <div class="item" style="--position: 3"><img loading="lazy"   src="room_slider/images/dragon_3.webp" alt=""></div>
+                    <div class="item" style="--position: 1"><img loading="lazy"   src="room_slider/images/dragon_1.webp" alt=""></div>
+                    <div class="item" style="--position: 4"><img loading="lazy"   src="room_slider/images/dragon_4.webp" alt=""></div>
+                    <div class="item" style="--position: 5"><img loading="lazy"   src="room_slider/images/dragon_5.webp" alt=""></div>
+                    <div class="item" style="--position: 6"><img loading="lazy"   src="room_slider/images/dragon_6.webp" alt=""></div>
+                    <div class="item" style="--position: 7"><img loading="lazy"   src="room_slider/images/dragon_7.webp" alt=""></div>
+                    <div class="item" style="--position: 8"><img loading="lazy"   src="room_slider/images/dragon_8.webp" alt=""></div>
+                    <div class="item" style="--position: 9"><img loading="lazy"   src="room_slider/images/dragon_9.webp" alt=""></div>
+                    <div class="item" style="--position: 10"><img loading="lazy"   src="room_slider/images/dragon_10.webp" alt=""></div>
+                </div>
+                <div class="contentroom">
+                    <h1 data-content="SUITES & ROOMS">
+                        SUITES & ROOMS
+                    </h1>
+                    <!-- <div class="author">
+                        <h2>BELMOND</h2>
+                        <p><b>Web Design</b></p>
+                        <p>
+                            Subscribe to the channel to watch many interesting videos
+                        </p>
+                    </div> -->
+                    <div class="model"></div>
+                </div>
+            </div>
+
+            <!-- <div class="roomsContainer grid">
+               <div class="firstGrid grid">
+                    <div class="singleRoom">
+                        <div class="imgDiv">
+                            <img loading="lazy"  src="./Assets/room (4).webp" alt="Best Hotel Rooms in Italy - Entebbe">
+                        </div>
+
+                        <a href="" class="bookBtn">
+                            BOOK
+                        </a>
+
+                        <div class="roomInfo">
+                            <span class="price">
+                                $150 / Night
+                            </span>
+
+                            <span class="roomType">
+                                Junior Suite
+                            </span>
+
+                            <div class="overFlowText flex">
+                                <div class="icons flex">
+                                    <img loading="lazy"  src="./Assets/bed.webp" alt="hotel Room in Entebbe">
+                                    <img loading="lazy"  src="./Assets/bath.webp" alt="hotel Room in Entebbe">
+                                    <img loading="lazy"  src="./Assets/bath-towel.webp" alt="hotel Room in Entebbe">
+                                    <img loading="lazy"  src="./Assets/wifi.webp" alt="hotel Room in Entebbe">
+                                    <img loading="lazy"  src="./Assets/room-service.webp" alt="hotel Room in Entebbe">
+                                </div>
+
+                                <a href="singleRoomDetails.html" class="flex">DETAILS <i class="uil uil-arrow-right icon"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="overlayColor">
+
+                        </div>
+                    </div>
+                    <div class="singleRoom">
+                        <div class="imgDiv">
+                            <img loading="lazy"  src="./Assets/bedroom-490779_1920.webp" alt="Best Hotel Rooms in Italy - Entebbe">
+                        </div>
+
+                        <a href="" class="bookBtn">
+                            BOOK
+                        </a>
+
+                        <div class="roomInfo">
+                            <span class="price">
+                                $200 / Night
+                            </span>
+
+                            <span class="roomType">
+                                Standard Suite
+                            </span>
+
+                            <div class="overFlowText flex">
+                                <div class="icons flex">
+                                    <img loading="lazy"  src="./Assets/bed.webp" alt="hotel Room in Entebbe">
+                                    <img loading="lazy"  src="./Assets/bath.webp" alt="hotel Room in Entebbe">
+                                    <img loading="lazy"  src="./Assets/bath-towel.webp" alt="hotel Room in Entebbe">
+                                    <img loading="lazy"  src="./Assets/wifi.webp" alt="hotel Room in Entebbe">
+                                    <img loading="lazy"  src="./Assets/room-service.webp" alt="hotel Room in Entebbe">
+                                </div>
+
+                                <a href="singleRoomDetails.html" class="flex">DETAILS <i class="uil uil-arrow-right icon"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="overlayColor">
+
+                        </div>
+                    </div>
+                    <div class="singleRoom">
+                        <div class="imgDiv">
+                            <img loading="lazy"  src="./Assets/honeymoon-couple-suite-hotel-horizon-entebbe.webp" alt="Best Hotel Rooms in Italy - Entebbe">
+                        </div>
+
+                        <a href="" class="bookBtn">
+                            BOOK
+                        </a>
+
+                        <div class="roomInfo">
+                            <span class="price">
+                                $250 / Night
+                            </span>
+
+                            <span class="roomType">
+                               Honey Moon Suite
+                            </span>
+
+                            <div class="overFlowText flex">
+                                <div class="icons flex">
+                                    <img loading="lazy"  src="./Assets/bed.webp" alt="hotel Room in Entebbe">
+                                    <img loading="lazy"  src="./Assets/bath.webp" alt="hotel Room in Entebbe">
+                                    <img loading="lazy"  src="./Assets/bath-towel.webp" alt="hotel Room in Entebbe">
+                                    <img loading="lazy"  src="./Assets/wifi.webp" alt="hotel Room in Entebbe">
+                                    <img loading="lazy"  src="./Assets/room-service.webp" alt="hotel Room in Entebbe">
+                                </div>
+
+                                <a href="singleRoomDetails.html" class="flex">DETAILS <i class="uil uil-arrow-right icon"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="overlayColor">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="secondGrid grid">
+                    <div class="singleRoom">
+                        <div class="imgDiv">
+                            <img loading="lazy"  src="./Assets/standard-room-entebbe-hotel-horizon-1.webp" alt="Best Hotel Rooms in Italy - Entebbe">
+                        </div>
+    
+                        <a href="" class="bookBtn">
+                            BOOK
+                        </a>
+    
+                        <div class="roomInfo">
+                            <span class="price">
+                                $250 / Night
+                            </span>
+    
+                            <span class="roomType">
+                               Super Delux Suite
+                            </span>
+    
+                            <div class="overFlowText flex">
+                                <div class="icons flex">
+                                    <img loading="lazy"  src="./Assets/bed.webp" alt="hotel Room in Entebbe">
+                                    <img loading="lazy"  src="./Assets/bath.webp" alt="hotel Room in Entebbe">
+                                    <img loading="lazy"  src="./Assets/bath-towel.webp" alt="hotel Room in Entebbe">
+                                    <img loading="lazy"  src="./Assets/wifi.webp" alt="hotel Room in Entebbe">
+                                    <img loading="lazy"  src="./Assets/room-service.webp" alt="hotel Room in Entebbe">
+                                </div>
+    
+                                <a href="singleRoomDetails.html" class="flex">DETAILS <i class="uil uil-arrow-right icon"></i></a>
+                            </div>
+                        </div>
+    
+                        <div class="overlayColor">
+    
+                        </div>
+                    </div>
+                    <div class="singleRoom">
+                        <div class="imgDiv">
+                            <img loading="lazy"  src="./Assets/family-room-2-hotel-horizon-entebbe.webp" alt="Best Hotel Rooms in Italy - Entebbe">
+                        </div>
+    
+                        <a href="" class="bookBtn">
+                            BOOK
+                        </a>
+    
+                        <div class="roomInfo">
+                            <span class="price">
+                                $500 / Night
+                            </span>
+    
+                            <span class="roomType">
+                                Family Suite
+                            </span>
+    
+                            <div class="overFlowText flex">
+                                <div class="icons flex">
+                                    <img loading="lazy"  src="./Assets/bed.webp" alt="hotel Room in Entebbe">
+                                    <img loading="lazy"  src="./Assets/bath.webp" alt="hotel Room in Entebbe">
+                                    <img loading="lazy"  src="./Assets/bath-towel.webp" alt="hotel Room in Entebbe">
+                                    <img loading="lazy"  src="./Assets/wifi.webp" alt="hotel Room in Entebbe">
+                                    <img loading="lazy"  src="./Assets/room-service.webp" alt="hotel Room in Entebbe">
+                                </div>
+    
+                                <a href="singleRoomDetails.html" class="flex">DETAILS <i class="uil uil-arrow-right icon"></i></a>
+                            </div>
+                        </div>
+    
+                        <div class="overlayColor">
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <!-- ROOMS & SUITES SECTION ENDS -->
+
+    <!-- SERVICES SECTION -->
+    <div class="section servicesSection container">
+        <div class="sectionIntro">
+            <span class="subTitle">
+                our services and facilities
+            </span>
+            <span class="secTitle">
+                Horizon Hotel Facilities
+            </span>
+        </div>
+
+        <div class="sectionContent grid">
+            <div class="singleService">
+                <img loading="lazy"  src="./Assets/travel.webp" alt="" class="primaryImage">
+                <!-- <img loading="lazy"  src="./Assets/travel.webp" alt="" class="overlayImage"> -->
+                <span class="serviceTitle">
+                    Pick Up & Drop
+                </span>
+                <p>We will pick and drop you off and on the airport at your arrival and departure times.</p>
+            </div>
+
+            <div class="singleService">
+                <img loading="lazy"  src="./Assets/parking.webp" alt="" class="primaryImage">
+                <!-- <img loading="lazy"  src="./Assets/travel.webp" alt="" class="overlayImage"> -->
+                <span class="serviceTitle">
+                    Parking Space
+                </span>
+                <p>We have and provide enough parking space for in-house and day guests.</p>
+            </div>
+            <div class="singleService">
+                <img loading="lazy"  src="./Assets/cleaning-cart.webp" alt="" class="primaryImage">
+                <!-- <img loading="lazy"  src="./Assets/travel.webp" alt="" class="overlayImage"> -->
+                <span class="serviceTitle">
+                    Room Services
+                </span>
+                <p>Great and professional guest room valets to keep your room clean at all time. </p>
+            </div>
+
+            <div class="singleService">
+                <img loading="lazy"  src="./Assets/swimming-pool.webp" alt="" class="primaryImage">
+                <!-- <img loading="lazy"  src="./Assets/travel.webp" alt="" class="overlayImage"> -->
+                <span class="serviceTitle">
+                    Swimming Pool
+                </span>
+                <p> Swimming time dolor sit amet, consectetur adipisicing elit. Ea, quas.</p>
+            </div>
+
+            <div class="singleService">
+                <img loading="lazy"  src="./Assets/wifi (3).webp" alt="" class="primaryImage">
+                <!-- <img loading="lazy"  src="./Assets/travel.webp" alt="" class="overlayImage"> -->
+                <span class="serviceTitle">
+                    Fast Internet Network
+                </span>
+                <p>We have a super fast internet and room cables for wired connection.</p>
+            </div>
+
+            <div class="singleService">
+                <img loading="lazy"  src="./Assets/breakfast.webp" alt="" class="primaryImage">
+                <!-- <img loading="lazy"  src="./Assets/travel.webp" alt="" class="overlayImage"> -->
+                <span class="serviceTitle">
+                    Room Dinning
+                </span>
+                <p>We offer room dinning with our chefs' made dishes or outsourced.</p>
+            </div>
+        </div>
+    </div>
+    <!-- SERVICES SECTION END -->
+
+    <!-- EXTRA SERVICE SECTION -->
+    <div class="section extraService">
+        <div class="sectionContent container">
+
+           <div class="textSection">
+            <span class="subTitle">BEST PRICE  IN ENTEBBE </span>
+            <span class="secTitle">
+                Extra Services
+            </span>
+<p>
+            Embrace true escapism and experience the next level of excellence with Belmond’s selection of Signature Suites and Villas. Our most opulent accommodation around the globe promises a truly indulgent getaway⁠—where every pristine detail is taken care of. <br>
+            Settle into an iconic dwelling and reconnect with a deep sense of place and history. Within your personal oasis, time stands still and unique features – from private pools to verdant terraces – sparkle anew. <br>
+            
+        </p>
+            <div class="reservationsNumber flex">
+                <i class="uil uil-calling icon"></i>
+                <div>
+                    <span class="subTitle">
+                        For more information
+                    </span>
+                    <a href="tel:256-705-886-700">+256 705 886 700</a>
+                </div>
+            </div>
+           </div>
+
+
+            <div class="swiperSection swiper">
+                <div class="swiper-wrapper">
+                    <div class="singleService swiper-slide">
+                        <div class="imgDiv">
+                            <img loading="lazy"  src="./Assets/safe.webp" alt="Hotel Safe Box">
+                        </div>
+                        <div class="serviceInfo">
+                            <span class="serviceTitle">Elsafe Box</span>
+                            <h3 class="price">$16<small> / Day</small></h3>
+
+                            <div class="checkList grid">
+                                <div class="singleCheck flex">
+                                    <i class="uil uil-check-circle icon"></i>
+                                    <p>Round-trip transfers</p>
+                                </div>
+                                <div class="singleCheck flex">
+                                    <i class="uil uil-check-circle icon"></i>
+                                    <p>Dedicated Host service</p>
+                                </div>
+                                <div class="singleCheck flex">
+                                    <i class="uil uil-times-circle icon"></i>
+                                    <p>Daily breakfast</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="singleService swiper-slide">
+                        <div class="imgDiv">
+                            <img loading="lazy"  src="./Assets/dining.webp" alt="Hotel Safe Box">
+                        </div>
+                        <div class="serviceInfo">
+                            <span class="serviceTitle">In-room Dining</span>
+                            <h3 class="price">$15<small> / Day</small></h3>
+                          
+
+                            <div class="checkList grid">
+                                <div class="singleCheck flex">
+                                    <i class="uil uil-check-circle icon"></i>
+                                    <p>Round-trip transfers</p>
+                                </div>
+                                <div class="singleCheck flex">
+                                    <i class="uil uil-check-circle icon"></i>
+                                    <p>Complimentary laundry service</p>
+                                </div>
+                                <div class="singleCheck flex">
+                                    <i class="uil uil-check-circle icon"></i>
+                                    <p> Complimentary curated in-suite bar and coffee</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="singleService swiper-slide">
+                        <div class="imgDiv">
+                            <img loading="lazy"  src="./Assets/bar.webp" alt="Hotel Safe Box">
+                        </div>
+                        <div class="serviceInfo">
+                            <span class="serviceTitle">In-room Bar</span>
+                            <h3 class="price">$20<small> @ Item</small></h3>
+                          
+
+                            <div class="checkList grid">
+                                <div class="singleCheck flex">
+                                    <i class="uil uil-check-circle icon"></i>
+                                    <p>Complimentary curated in-suite bar and coffee</p>
+                                </div>
+                                <div class="singleCheck flex">
+                                    <i class="uil uil-check-circle icon"></i>
+                                    <p>Complimentary laundry service</p>
+                                </div>
+                                <div class="singleCheck flex">
+                                    <i class="uil uil-times-circle icon"></i>
+                                    <p>A fully bespoke VIP stay experience</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="singleService swiper-slide">
+                        <div class="imgDiv">
+                            <img loading="lazy"  src="./Assets/housekeeping.webp" alt="Hotel Safe Box">
+                        </div>
+                        <div class="serviceInfo">
+                            <span class="serviceTitle">Special Room Cleaning</span>
+                            <h3 class="price">$15<small> / Day</small></h3>
+
+                            <div class="checkList grid">
+                                <div class="singleCheck flex">
+                                    <i class="uil uil-check-circle icon"></i>
+                                    <p>Round-trip transfers</p>
+                                </div>
+                                <div class="singleCheck flex">
+                                    <i class="uil uil-check-circle icon"></i>
+                                    <p>A fully bespoke VIP stay experience</p>
+                                </div>
+                                <div class="singleCheck flex">
+                                    <i class="uil uil-check-circle icon"></i>
+                                    <p>Complimentary laundry service</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="swiper-pagination"></div>             
+            </div>
+        </div>
+    </div>
+    <!-- EXTRA SERVICE SECTION ENDS -->
+
+    <!-- SEARCH ROOM  -->
+    <div class="section searchRoom ">
+        <div class="sectionContent container">
+            <div class="sectionIntro">
+                <span class="subTitle">
+                    check room now
+                </span>
+                <span class="secTitle">
+                  Search Rooms At Horizon
+                </span>
+            </div>
+
+            <div class="searchField">
+                <form method="POST" class="form ">
+                    <div class="singleInput flex">
+                        <label for="checkIn">Check In</label>
+                        <input type="datetime-local" id="checkIn" name="checkInDate" required>  
+                    </div>
+
+                    <div class="singleInput flex">
+                        <label for="checkOut">Check Out</label>
+                        <input type="datetime-local" id="checkOut" name="checkOutDate" required>
+                    </div>
+
+                    <div class="singleInput flex">
+                        <label for="capacity">Total People</label>
+                        <input type="text" id="capacity" name="capacity" placeholder="E.g: 2 " required>
+                        
+                    </div>
+
+                    <div class="singleInput flex">
+                        <label for="roomType">Room Type</label>
+                        <select name="roomType">
+                            <option value="junior">Junior Room</option>
+                            <option value="standard">Standard Room</option>
+                            <option value="delux">Delux Room</option>
+                            <option value="superDelux">Super Delux Room</option>
+                            <option value="family" selected>Family Room</option>
+                            <option value="business">Business Room</option>
+                            <option value="honeymoon">Honeymoon Room</option>
+                        </select>
+                    </div>
+
+                    <button class="btn bg ">Search Room </button>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <!-- SEARCH ROOM ENDS -->
+
+    <!-- TESTIMONIAL SECTION -->
+    <div class="section testimonialSection">
+    <div class="sectionContent container">
+        <div class="sectionIntro">
+            <span class="subTitle">
+                testimonials
+            </span>
+            <span class="secTitle">
+                What Our Clients' Say
+            </span>
+        </div>
+
+       <div class="swiper testimonialSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide singleTestimony">
+                    <p>Belmond knows how to make you feel special. The staff was warm and welcoming, always anticipating our needs. The spa treatments were heavenly, and the sunset dinner on the terrace was simply magical. Worth every penny!  </p>
+
+                    <div class="clientDiv flex">
+                        <div class="imgDiv">
+                        <img loading="lazy"  src="./Assets/user (14).webp" alt="Client Image">
+                        </div>
+
+                        <div class="clientBio">
+                        <div class="flex stars animate__animated animate__fadeInUp">
+                            <i class='bx bxs-star icon'></i>
+                            <i class='bx bxs-star icon'></i>
+                            <i class='bx bxs-star icon'></i>
+                            <i class='bx bxs-star icon'></i>
+                            <i class='bx bxs-star icon'></i>
+                        </div>
+
+                        <span class="clientName">
+                            Charmaine Tan
+                        </span>
+                        <small class="clientTitle">
+                            Guest Review
+                        </small>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-slide singleTestimony">
+                    <p>One of the best hotel experiences we've ever had! From the personalized welcome note in our room to the incredible attention to detail, everything was beyond perfect. The hotel itself is stunning, and the atmosphere is pure bliss. Highly recommend!   </p>
+
+                    <div class="clientDiv flex">
+                        <div class="imgDiv">
+                        <img loading="lazy"  src="./Assets/user (12).webp" alt="Client Image">
+                        </div>
+
+                        <div class="clientBio">
+                        <div class="flex stars animate__animated animate__fadeInUp">
+                            <i class='bx bxs-star icon'></i>
+                            <i class='bx bxs-star icon'></i>
+                            <i class='bx bxs-star icon'></i>
+                            <i class='bx bxs-star icon'></i>
+                            <i class='bx bxs-star icon'></i>
+                        </div>
+
+                        <span class="clientName">
+                            Gerio Novic
+                        </span>
+                        <small class="clientTitle">
+                            Guest Review
+                        </small>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-slide singleTestimony">
+                    <p>Luxury, charm, and impeccable service. The moment we stepped into the Belmond, we felt transported to another world. Every experience—from the gourmet breakfast to the private guided tour—was exceptional. A dream come true! </p>
+
+                    <div class="clientDiv flex">
+                        <div class="imgDiv">
+                        <img loading="lazy"  src="./Assets/user (10).webp" alt="Client Image">
+                        </div>
+
+                        <div class="clientBio">
+                        <div class="flex stars animate__animated animate__fadeInUp">
+                            <i class='bx bxs-star icon'></i>
+                            <i class='bx bxs-star icon'></i>
+                            <i class='bx bxs-star icon'></i>
+                            <i class='bx bxs-star icon'></i>
+                            <i class='bx bxs-star icon'></i>
+                        </div>
+
+                        <span class="clientName">
+                            Christine Lopez
+                        </span>
+                        <small class="clientTitle">
+                            Guest Review
+                        </small>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-slide singleTestimony">
+                    <p>An unforgettable stay! The hotel is pure elegance, blending history with modern luxury. Our room had a spectacular sea view, the food was divine, and the service was flawless. We can't wait to return! </p>
+
+                    <div class="clientDiv flex">
+                        <div class="imgDiv">
+                        <img loading="lazy"  src="./Assets/user (25).webp" alt="Client Image">
+                        </div>
+
+                        <div class="clientBio">
+                        <div class="flex stars animate__animated animate__fadeInUp">
+                            <i class='bx bxs-star icon'></i>
+                            <i class='bx bxs-star icon'></i>
+                            <i class='bx bxs-star icon'></i>
+                            <i class='bx bxs-star icon'></i>
+                            <i class='bx bxs-star icon'></i>
+                        </div>
+
+                        <span class="clientName">
+                            Merez Linda
+                        </span>
+                        <small class="clientTitle">
+                            Guest Review
+                        </small>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <i class='bx bxs-quote-alt-right quoteIcon' ></i>
+
+    </div>
+    </div>
+    <!-- TESTIMONIAL SECTION ENDS -->
+
+    <!-- GRID SECTION  -->
+    <div class="section gridSection container" id="amenities">
+        <div class="sectionContent grid">
+
+            <div class="singleGrid flex">
+                <div class="imageDiv">
+                <img loading="lazy"  src="./Assets/event.webp" alt="Event Space Image">
+                </div>
+                <div class="textDiv">
+                <div class="sectionIntro">
+                    <span class="secSubTitle">
+                        discover
+                    </span>
+                    <span class="secMainTitle">
+                        Event Spaces
+                    </span>
+                    
+                </div>
+
+                <p>
+                    Check out our ambient and well-equipped event spaces that are not just a venue but a complete end-to-end service that ensure your event is a success without any hiccups! Check-out our event spaces by clicking the button below.
+                </p>
+
+                <a href="" class="btn bg">learn more</a>
+                </div>
+            </div>
+
+            <div class="singleGrid flex">
+                <div class="textDiv">
+                    <div class="sectionIntro">
+                        <span class="secSubTitle">
+                            Experience
+                        </span>
+                        <span class="secMainTitle">
+                            The Health Club & Pool
+                        </span>
+                        
+                    </div>
+    
+                    <p>
+                        Our health club and swimming  activities are well managed and fairly affordable by all people.
+                        Getting a swimming pool membership gives you extra savings and benefits including discounted breakfast and 10% off on hotel rooms & events. See detailed pricing by clicking the button below.
+                    </p>
+    
+                    <a href="" class="btn bg">learn more</a>
+                    </div>
+                <div class="imageDiv">
+                <img loading="lazy"  src="./Assets/relaxing-3112750_1920.webp" alt="Event Space Image">
+                </div>
+            </div>
+
+            <div class="singleGrid flex">
+                <div class="imageDiv">
+                <img loading="lazy"  src="./Assets/room (1).webp" alt="Event Space Image">
+                </div>
+                <div class="textDiv">
+                <div class="sectionIntro">
+                    <span class="secSubTitle">
+                        dericiousness
+                    </span>
+                    <span class="secMainTitle">
+                        Restaurants
+                    </span>
+                    
+                </div>
+
+                <p>
+                    At Signature Restaurant, we pride ourselves on providing delicious, hygienically-prepared meals. Our international chef is a master at crafting continental dishes giving you a taste of the world. Discover what more the restaurant has to offer by clicking the button below.
+                </p>
+
+                <a href="" class="btn bg">learn more</a>
+                </div>
+            </div>
+
+            <div class="singleGrid flex">
+                <div class="textDiv">
+                    <div class="sectionIntro">
+                        <span class="secSubTitle">
+                            comfort
+                        </span>
+                        <span class="secMainTitle">
+                            Airport Pick Up & Drop Off
+                        </span>
+                        
+                    </div>
+    
+                    <p>
+                        We have experienced driver and comfirtable vehicles to get you off the airport at you arrival and departure times.
+                        You simply need to let us know the number of guests you are moving with.
+                    </p>
+    
+                    <a href="" class="btn bg">learn more</a>
+                    </div>
+                <div class="imageDiv">
+                <img loading="lazy"  src="./Assets/airport.webp" alt="Event Space Image">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- GRID SECTION ENDS -->
+
+    <!-- NEWS SECTION -->
+    <div class="section newSection">
+        <div class="sectionContent container">
+            <div class="sectionIntro">
+                <span class="subTitle">
+                    inside horizon hotel
+                </span>
+                <span class="secTitle">
+                  Our Monthly Champions & News
+                </span>
+            </div>
+
+            <div class="newsContainer swiper">
+                <div class="swiper-wrapper">
+                    <div class="singleNews swiper-slide">
+                        <div class="imgDiv">
+                         <img loading="lazy"  src="./Assets/entebbe-hotel-horizon-elevation-road-view.webp" alt="">
+                        </div>
+                        <span class="dateBtn">
+                         Nov  2022
+                        </span>
+ 
+                        <div class="infoCard">
+                         <span class="tag">luxury</span>
+                         <a href="" class="secMainTitle">
+                             Why Horizon is the best Hotel in Entebbe
+                         </a>
+                        </div>
+                    </div>
+
+                    <div class="singleNews swiper-slide">
+                       <div class="imgDiv">
+                        <img loading="lazy"  src="./Assets/chef-963195_1920.webp" alt="">
+                       </div>
+                       <span class="dateBtn">
+                        Nov  2022
+                       </span>
+
+                       <div class="infoCard">
+                        <span class="tag">champion</span>
+                        <a href="" class="secMainTitle">
+                            Introducing employee champion of  November
+                        </a>
+                       </div>
+                    </div>
+                    
+                    <div class="singleNews swiper-slide">
+                       <div class="imgDiv">
+                        <img loading="lazy"  src="./Assets/entebbe-hotel-horizon-reception.webp" alt="">
+                       </div>
+                       <span class="dateBtn">
+                        Nov  2022
+                       </span>
+
+                       <div class="infoCard">
+                        <span class="tag">record breaking</span>
+                        <a href="" class="secMainTitle">
+                            We hit 100% room occupancy this month.
+                        </a>
+                       </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-button-next">
+                    <i class="uil uil-arrow-right icon"></i>
+                </div>
+                <div class="swiper-button-prev">
+                    <i class="uil uil-arrow-left icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- NEWS SECTION ENDS -->
+      <!-- <div class="boy">🚶‍♂️</div> -->
+       <div class="animation-wrapper">
+  <div class="boy">
+    <img loading="lazy"  src="Assets/walking.gif">
+    </div>
+  
+    <div class="ground"></div>
+</div>
+    <!-- Footer Section -->
+    <section class="footer">
+        <div class="sectionContainer container">
+        <div class="mainContent grid">
+
+            <div class="introDiv">
+                <div class="logoDiv flex">
+                    <!-- <img loading="lazy"  src="./Assets/logo.webp" alt="Logo Image"> -->
+                    <h3>BELMOND</h3>
+                </div>
+                
+                <div>
+                    <img loading="lazy"  src="./Assets/footer.gif" alt="sponsor logo" style="width: 100%;">
+                  
+                </div>
+            </div>
+
+            <div class="support">
+                <div class="title">
+                    <h2>Support</h2>
+                </div>
+                <ul>
+                    <li>Bookings</li>
+                    <li>Help Videos</li>
+                    <li>Accessories</li>
+                    <li>Support</li>
+                    <li>Features</li>
+                </ul>
+            </div>
+
+            <div class="services">
+                <div class="title">
+                    <h2>Services</h2>
+                </div>
+                <ul>
+                    <li>Payment & Tips</li>
+                    <li>Terms & Service</li>
+                    <li>Swimming Pool</li>
+                    <li>Restaurants</li>
+                    <li>Q&A</li>
+                </ul>
+            </div>
+
+            <div class="about">
+                <div class="title">
+                    <h2>About</h2>
+                </div>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li>History</li>
+                    <li>Contact</li>
+                    <li>News</li>
+                    <li><a href="jobs.html">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="address">
+                <div class="title">
+                    <h2>Address</h2>
+                </div>
+                <p>Piazza San Giovanni del Toro 2, 84010 Ravello (SA), Italy.</p>
+                <div class="socials flex">
+                    <i class='bx bxl-facebook icon'></i>
+                    <i class='bx bxl-twitter icon' ></i>
+                    <i class='bx bxl-instagram-alt icon' ></i>
+                    <i class='bx bxl-telegram icon' ></i>
+                </div>
+            </div>
+        
+        </div>
+
+        <div class="lowerDivision flex">
+            <p>All rights reserved </p>
+            <ul class="flex">
+                <p>Services</p>
+                <p>Partners</p>
+                <p>Feedbacks</p>
+                <p><a href="login.html">Administrators</a></p>
+            </ul>
+        </div>
+        </div>
+    </section>
+    <!-- Footer Section Ends -->
+
+    <!-- Link swiper.js -->
+    <script src="./swiper-bundle.min.js"></script>
+    <!-- Link to JS -->
+    <script src="index.js"></script>
+    <script src="constant.js"></script>
+    <link rel="stylesheet" href="constant.css">
+    <!-- Link to the AOS animation Library  -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="sliderapp.js"></script>
+
+    <script>
+      AOS.init();
+    </script>
+    <script>
+        // JavaScript for auto-slider functionality
+        (function() {
+            const items = document.querySelectorAll('.list .item');
+            let currentIndex = 0;
+        
+            function showNextSlide() {
+                // Remove the 'active' class from the current item
+                items[currentIndex].classList.remove('active');
+        
+                // Increment the index and loop back if at the end
+                currentIndex = (currentIndex + 1) % items.length;
+        
+                // Add the 'active' class to the next item
+                items[currentIndex].classList.add('active');
+            }
+        
+            // Change slide every 2 seconds
+            setInterval(showNextSlide, 3000);
+        })();
+        </script>
+<script src="https://colorlib.com/polygon/srtdash/assets/js/vendor/jquery-2.2.4.min.js"></script>
+<script>
+    var modal = document.getElementById("myModal");
+        //  var btn = document.getElementById("myBtn");
+         var span = document.getElementsByClassName("close")[0];
+        //  var goYatraBtn = document.getElementById("goYatraBtn");
+    
+        //  btn.onclick = function() {
+        //      modal.classList.add("show");
+        //  }
+    
+        //  span.onclick = function() {
+        //      modal.classList.remove("show");
+        //  }
+    
+        //  window.onclick = function(event) {
+        //      if (event.target == modal) {
+        //          modal.classList.remove("show");
+        //      }
+        //  }
+    
+        //  goYatraBtn.onclick = function() {
+        //      var checkboxes = document.querySelectorAll('.checkbox-container input[type="checkbox"]');
+        //      var checkedCount = Array.from(checkboxes).filter(checkbox => checkbox.checked).length;
+    
+        //      if (checkedCount < 2) {
+        //          alert("Please select at least two options.");
+        //      } else {
+        //          // Proceed with the action
+        //          alert("Proceeding with selected options.");
+        //      }
+        //  }
+    </script>
+    
+</body>
+</html>
+<script src="api.js"></script>

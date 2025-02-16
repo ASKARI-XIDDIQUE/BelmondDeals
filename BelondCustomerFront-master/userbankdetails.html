@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank Details</title>
+  <link rel="stylesheet" href="userstyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="title">Bank Details</div>
+    <div class="content">
+      <form action="post">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details"><i class="fas fa-user"></i> Username</span>
+            <input type="text" required id="acountHolderName">
+          </div>
+          <div class="input-box">
+            <span class="details"><i class="fas fa-university"></i> Bank Name</span>
+            <input type="text" required id="bankName">
+          </div>
+          <div class="input-box">
+            <span class="details"><i class="fas fa-credit-card"></i> Bank Account Number</span>
+            <input type="text" required id="bankAccountNo">
+          </div>
+          <div class="input-box">
+            <span class="details"><i class="fas fa-code"></i> IFSC Code</span>
+            <input type="text" required id="iPSCCode">
+          </div> 
+        </div>
+        <div class="button">
+          <button type="submit" onclick="SubmitBankDetail()" id="belmondSubmit" value="Confirm">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+<script src="bankForm.js"></script>
+    <script src="api.js"></script>
+    <link rel="stylesheet" href="constant.css">
+</html>

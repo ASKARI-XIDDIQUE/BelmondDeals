@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboardd</title>
+
+    <!-- Link to css -->
+    <link rel="stylesheet" href="./admin.css">
+    <link rel="stylesheet" href="../index.css">
+    <!-- Link to icons -->
+   
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Link swiper css -->
+    <link rel="stylesheet" href="./swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="api.js"></script>
+    <script src="../Admin/Withdraw/Users/script.js"></script>
+
+
+    <script>
+        function toggleModal() {
+            const modal = document.getElementById('uniqueBookingModal');
+            modal.classList.toggle('hidden');
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            const loadingOverlay = document.getElementById('uniqueLoadingOverlay');
+            loadingOverlay.classList.remove('hidden');
+
+            // Simulate a network request
+            setTimeout(() => {
+                loadingOverlay.classList.add('hidden');
+                alert('Submission successful!');
+                toggleModal();
+            }, 2000);
+        }
+    </script>
+</head>
+<body onload="fetchUsers(1,10)">
+    <div class="adminDasboard flex">
+        <div class="sideMenu">
+            <div class="logoDiv flex">
+                <img src="../Assets/logo.webp" alt="Logo Image" style="width: 100px; height: 100px;">
+            </div>
+          <div class="menu">
+            <ul class="menuItem grid">
+                <li class="menuList flex">
+                    <a href="dashboard.html" class="menuLink linkActive flex Active">
+                        <i class="uil uil-create-dashboard icon"></i>
+                        <span class="text">Dashboard</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex">
+                    <a href="booking.html" class="menuLink flex">
+                        <i class="uil uil-building icon"></i>
+                        <span class="text">Bookings</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex"> 
+                    <a href="withdraw.html" class="menuLink flex">
+                        <i class="uil uil-book-open icon"></i>
+                        <span class="text">Withdraw List</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex">
+                    <a href="premium.html" class="menuLink flex">
+                        <i class="uil uil-clipboard-alt icon"></i>
+                        <span class="text">Premium</span>
+                    </a>
+                </li> 
+                <li class="menuList flex"> 
+                    <a href="user.html" class="menuLink flex">
+                        <i class="uil uil-user-circle icon"></i>
+                        <span class="text">Users</span>
+                    </a>
+                </li> 
+                
+                <li class="menuList flex"> 
+                    <a href="deposit.html" class="menuLink flex">
+                        <i class="uil uil-key-skeleton icon"></i>
+                        <span class="text">Deposit Details</span>
+                    </a>
+                </li>
+
+                <li class="menuList flex"> 
+                    <a href="commision.html" class="menuLink flex">
+                        <i class="uil uil-comment-message icon"></i>
+                        <span class="text">Commission</span>
+                    </a>
+                </li> 
+                <li class="menuList flex"> 
+                    <a href="media.html" class="menuLink flex">
+                        <i class="uil uil-whatsapp icon"></i>
+                        <span class="text">Social Media</span>
+                    </a>
+                </li> 
+                <!-- <li class="menuList flex"> 
+                    <a href="bonus.html" class="menuLink flex">
+                        <i class="uil uil-graduation-cap icon"></i>
+                        <span class="text">Bonus Details</span>
+                    </a>
+                </li>  -->
+
+                
+                <li class="menuList flex"> 
+                    <a href="admins.html" class="menuLink flex">
+                        <i class="uil uil-user-circle icon"></i>
+                        <span class="text">Admins</span>
+                    </a>
+                </li> 
+            </ul>
+          </div>
+
+          <div class="accountDiv">
+            <div class="imgDiv">
+                <img src="../Assets/user (8).webp" alt="Admin Image">
+            </div>
+            <span class="name">燕西 管理员</span>
+            <p></p>
+
+            <div class="accountBtns flex">
+                <a onclick="logout()">
+                    <button class="btn bg flex">
+                        <i class="uil uil-sign-out-alt icon"></i>
+                        Log Out
+                    </button>
+                </a>
+                <a href="#">
+                    <button class="btn bg flex">
+                        <i class="uil uil-setting icon"></i>
+                    </button>
+                </a>
+            </div>
+           
+          </div>
+        </div>
+
+        <div class="propertiesBody">
+            <div class="top flex">
+                <h1 class="titleText">
+                    Premium
+                </h1>
+                <input type="text" id="phone" onkeyup="search()" placeholder="Search" style="padding: 7px;
+                width: 30%;">
+                <button id="addNew" class="px-4 py-2 bg-custom text-white rounded" type="button" style="display: block;" onclick="addNewUser()">Add New User</button>
+                <!-- <a href="newproperty.html"><button  class="flex btn bg">
+                    <i class="uil uil-plus"></i> Manual Book-in
+                </button></a> -->
+            </div>
+
+            <div class="tenantsDiv">
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                        <th>Bank Details</th>
+                        <th>Edit User</th>
+                        <th>Type</th>
+                    </tr>
+<tbody id="bookingsTable">
+                      
+                </tbody>                        
+                </table>
+
+            </div>
+        </div>    
+    </div>   
+<!-- **************************************************************************** RESTRICT MODAL ***************************************************** -->
+<div id="uniqueBookingModal" class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 hidden">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md my-8 mx-4 relative">
+        <div id="uniqueLoadingOverlay" class="absolute inset-0 flex items-center justify-center bg-white bg-opacity-75 hidden">
+            <svg class="animate-spin h-8 w-8 text-[#ab8554]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+            </svg>
+        </div>
+        <div id="uniqueModalContent">
+            <div class="text-center mb-4">
+                <h2 class="text-xl font-bold">Booking</h2>
+            </div>
+            <form onsubmit="handleSubmit(event)">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="uniqueBookingCount">
+                        Booking Count
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="uniqueBookingCount" type="text" placeholder="Enter count">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="uniqueDepositAmount">
+                        Deposit Amount
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="uniqueDepositAmount" type="text" value="-50">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">
+                        Select Pending Payment Range
+                    </label>
+                    <div class="text-gray-700">
+                        <div>
+                            <input type="radio" id="uniqueFeedShot1" name="uniquePendingPayment" value="39000-42000">
+                            <label for="uniqueFeedShot1">Feed Shot: 39000 - 42000</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="uniqueFirstShot1" name="uniquePendingPayment" value="99000-112000">
+                            <label for="uniqueFirstShot1">First Shot: 99000 - 112000</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="uniqueSecondShot1" name="uniquePendingPayment" value="312000-318000">
+                            <label for="uniqueSecondShot1">Second Shot: 312000 - 318000</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="uniqueSecondShot1" name="uniquePendingPayment" value="312000-318000">
+                            <label for="uniqueSecondShot1">Third Shot: 612000 - 718000</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">
+                        Commission Amount
+                    </label>
+                    <div class="text-gray-700">
+                        <div>
+                            <input type="radio" id="uniqueFeedShot2" name="uniqueCommissionAmount" value="5000-7000">
+                            <label for="uniqueFeedShot2">Feed Shot: 5000 - 7000</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="uniqueFirstShot2" name="uniqueCommissionAmount" value="9000-12000">
+                            <label for="uniqueFirstShot2">First Shot: 9000 - 12000</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="uniqueSecondShot2" name="uniqueCommissionAmount" value="21000-27000">
+                            <label for="uniqueSecondShot2">Second Shot: 21000 - 27000</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="uniqueSecondShot2" name="uniqueCommissionAmount" value="21000-27000">
+                            <label for="uniqueSecondShot2">Third Shot: 41000 - 47000
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <div class="text-gray-700">
+                        <div>
+                            <input type="radio" id="uniqueBusinessClass" name="uniqueClassType" value="businessClass">
+                            <label for="uniqueBusinessClass">Business Class with 5x Commission</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-end">
+                    <button class="bg-gray-500 text-white font-bold py-2 px-4 rounded mr-2" type="button" onclick="toggleModal()">
+                        Close
+                    </button>
+                    <button id="uniqueSubmitButton" class="bg-[#ab8554] text-white font-bold py-2 px-4 rounded" type="submit">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+    <!-- **************************************************************************** RESTRICT MODAL END ***************************************************** -->
+
+  
+    <div class="modal fade" id="bankdetails" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Bank Detail</h5>
+                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formModal">
+                        <!-- Booking Count -->
+                        <div class="form-group">
+                            <label for="nameInput">ID</label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="nameInput" 
+                                placeholder="Enter count" 
+                                required>
+                        </div>
+                        <!-- Deposit Payment -->
+                        <div class="form-group">
+                            <label for="emailInput">Account Holder Name</label>
+                            <input 
+                                type="email" 
+                                class="form-control" 
+                                id="emailInput" 
+                                placeholder="Enter amount" 
+                                required>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="emailInput">Account No</label>
+                            <input 
+                                type="email" 
+                                class="form-control" 
+                                id="emailInput" 
+                                placeholder="Enter amount" 
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="emailInput">Bank Details</label>
+                            <input 
+                                type="email" 
+                                class="form-control" 
+                                id="emailInput" 
+                                placeholder="Enter amount" 
+                                required>
+                        </div>
+                        <!-- Business Class with 5x commission -->
+                        <div class="form-group">
+                            <label for="emailInput">IFSC Code</label>
+                            <input 
+                                type="email" 
+                                class="form-control" 
+                                id="emailInput" 
+                                placeholder="Enter amount" 
+                                required>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="emailInput">UPI ID</label>
+                            <input 
+                                type="email" 
+                                class="form-control" 
+                                id="emailInput" 
+                                placeholder="Enter amount" 
+                                required>
+                        </div>
+    
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" form="formModal">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- 
+    *************************BANk DETIALS MODAL ************************* -->
+
+    <div id="modal" class="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-50 hidden">
+        <div class="bg-white rounded-lg shadow-lg w-full max-w-md relative">
+            <div id="loading" class="absolute inset-0 flex items-center justify-center bg-white bg-opacity-75 hidden">
+               <a onclick="closeBankDetailModal()"> <i class="fas fa-spinner fa-spin text-2xl text-gray-500"></i></a>
+            </div>
+            <div class="flex justify-between items-center p-4 border-b">
+                <h2 class="text-xl font-semibold">Bank Detail</h2>
+                <button id="closeModal" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-4">
+                <div class="mb-4">
+                    <input type="text" hidden id="usrID">
+                    <label class="block text-gray-700">Account Holder Name</label>
+                    <input type="text" class="w-full mt-1 p-2 border rounded" id="acountHolderName">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Account No</label>
+                    <input type="text" class="w-full mt-1 p-2 border rounded" id="bankAccountNo">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Bank Name</label>
+                    <input type="text" class="w-full mt-1 p-2 border rounded" id="bankName">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">IFSC Code</label>
+                    <input type="text" class="w-full mt-1 p-2 border rounded" id="iPSCCode">
+                </div>
+            </div>
+            <div class="flex justify-end p-4 border-t">
+                <button id="closeModalBottom" type="button" onclick="closeBankDetailModal()" class="px-4 py-2 bg-gray-500 text-white rounded mr-2">Close</button>
+                <button onclick="updateBank()" class="px-4 py-2 bg-custom text-white rounded hover:bg-custom-dark">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // document.getElementById('openModal').addEventListener('click', function() {
+        //     document.getElementById('modal').classList.remove('hidden');
+        // });
+
+        document.getElementById('closeModal').addEventListener('click', function() {
+            document.getElementById('modal').classList.add('hidden');
+        });
+
+        document.getElementById('closeModalBottom').addEventListener('click', function() {
+            document.getElementById('modal').classList.add('hidden');
+        });
+
+        // document.getElementById('submitBtn').addEventListener('click', function() {
+        //     document.getElementById('loading').classList.remove('hidden');
+
+        //     setTimeout(function() {
+        //         document.getElementById('loading').classList.add('hidden');
+        //         alert('Form submitted successfully!');
+        //         document.getElementById('modal').classList.add('hidden');
+        //     }, 2000);
+        // });
+    </script>
+
+
+   ************************************* *********************************
+
+   
+    <!-- Modal -->
+    <div id="modal123" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md relative mx-4 sm:mx-6 md:mx-8 lg:mx-10 xl:mx-12">
+            <div class="flex justify-between items-center border-b pb-3 mb-4">
+                <h2 class="text-xl font-semibold">Add Customer Pending Amount</h2>
+                <button id="closeModalBtn123" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="mb-4">
+                <label for="pendingAmount123" class="block text-gray-700 mb-2">Pending Amount</label>
+                <input type="text" id="pendingAmount123" placeholder="Enter count" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div class="flex justify-end space-x-2">
+                <button id="closeModalBtn2123" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">Close</button>
+                <button id="submitBtn123" class="custom-color text-white px-4 py-2 rounded">Submit</button>
+            </div>
+            <div id="loading123" class="absolute inset-0 flex items-center justify-center bg-white bg-opacity-75 hidden">
+                <div class="loader border-t-4 border-b-4 border-solid rounded-full w-12 h-12 animate-spin"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // const openModalBtn = document.getElementById('openModalBtn123');
+        const closeModalBtn = document.getElementById('closeModalBtn123');
+        const closeModalBtn2 = document.getElementById('closeModalBtn2123');
+        const submitBtn = document.getElementById('submitBtn123');
+        const modal = document.getElementById('modal123');
+        const loading = document.getElementById('loading123');
+
+        // openModalBtn.addEventListener('click', () => {
+        //     modal.classList.remove('hidden');
+        // });
+
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+
+        closeModalBtn2.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+
+        submitBtn.addEventListener('click', () => {
+            loading.classList.remove('hidden');
+            setTimeout(() => {
+                loading.classList.add('hidden');
+                alert('Form submitted successfully!');
+                modal.classList.add('hidden');
+            }, 2000);
+        });
+    </script>
+
+    <!-- <script src="admin.js"></script> -->
+
+    </div>
+    </div>
+</div>
+</body>
+</html>  
+<script src="constant.js"></script>

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <title>Belmond</title>
+
+    <!-- Link css  -->
+    <link rel="stylesheet" href="./index.css">
+
+    <!-- Link to icons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Link swiper css -->
+    <link rel="stylesheet" href="./swiper-bundle.min.css">
+
+    <!-- Link to AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+<body style="background-color:#2f4f4f;">
+
+
+    <div class="header flex">
+        <div class="logoDiv">
+           <a href="index.html" class="flex">
+            <h2 style="color: #fff;">BELMOND</h1>
+            <!-- <img src="./Assets/logo.webp" alt="Logo Image"> -->
+           </a>
+        </div>
+
+        <div class="navBar" id="navBar">
+            <ul class="menu flex">
+                <li class="menuList">
+                    <a href="#" class="navLink">Home</a>
+                </li>
+                <li class="menuList">
+                    <a href="#rooms" class="navLink"> Rooms</a>
+                </li>
+                <li class="menuList">
+                    <a href="#amenities" class="navLink">Restaurants</a>
+                </li>
+                <li class="menuList">
+                    <a href="#amenities" class="navLink">Event space</a>
+                </li>
+                <li class="menuList">
+                    <a href="details.html" class="navLink">Details</a>
+                </li>
+                <li class="menuList">
+                    <a href="contactPage.html" class="navLink">Contact Us</a>
+                </li>
+               </ul>
+
+          
+
+           <div class="closeNavbar" id="closeNavbar">
+            <i class="uil uil-times-circle icon"></i>
+        </div>
+        </div>
+
+        <div class="toggleNavbaIcon" id="toggleNavbaIcon">
+            <i class="uil uil-bars icon"></i>
+        </div> 
+    </div>
+
+    <!-- SINGLE ROOM DETAILS PAGE -->
+    <div class="heroSection minHeroSection">
+        <div class="swiper heroSectionContainer">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="swiperOverlay"></div>
+                    <img src="./Assets/deluxe-room-entebbe-hotel-horizon.webp" alt="">
+    
+                    <div class="sectionContent flex">
+                        <div class="leftSection flex">
+                            <i class="uil uil-calling icon phoneIcon"></i>
+                            <div>
+                                <span class="subTitle">RESERVATION</span>
+                                <h3>0845 077 2222</h3>
+                            </div>
+                        </div>
+    
+               
+                        <div class="rightSection">
+                            <div class="line"></div>
+                            <div class="socialIcons grid">
+                                <i class="uil uil-facebook-f icon"></i>
+                                <i class="uil uil-instagram icon"></i>
+                                <i class="uil uil-twitter-alt icon"></i>
+                                <i class="uil uil-linkedin-alt icon"></i>
+                            </div>
+                            <div class="line"></div>
+                        </div>
+                        </div>
+                </div>
+    
+                <div class="swiper-slide">
+                    <div class="swiperOverlay"></div>
+                    <img src="./Assets/3.webp" alt="">
+                    <div class="sectionContent flex">
+                        <div class="leftSection flex">
+                            <i class="uil uil-calling icon phoneIcon"></i>
+                            <div>
+                                <span class="subTitle">RESERVATION</span>
+                                <h3>0845 077 2222</h3>
+                            </div>
+                        </div>
+    
+                       
+                        <div class="rightSection grid">
+                            <div class="line"></div>
+                            <div class="socialIcons grid">
+                                <i class="uil uil-facebook-f icon"></i>
+                                <i class="uil uil-instagram icon"></i>
+                                <i class="uil uil-twitter-alt icon"></i>
+                                <i class="uil uil-linkedin-alt icon"></i>
+                            </div>
+                            <div class="line"></div>
+                        </div>
+                        </div>
+                </div>
+    
+                <div class="swiper-slide">
+                    <div class="swiperOverlay"></div>
+                    <img src="./Assets/1.webp" alt="">
+    
+                    <div class="sectionContent flex">
+                        <div class="leftSection flex">
+                        <i class="uil uil-calling icon phoneIcon"></i>
+                        <div>
+                            <span class="subTitle">RESERVATION</span>
+                            <h3>0845 077 2222</h3>
+                        </div>
+                        </div>
+    
+                        <div class="rightSection">
+                            <div class="line"></div>
+                            <div class="socialIcons grid">
+                            <i class="uil uil-facebook-f icon"></i>
+                            <i class="uil uil-instagram icon"></i>
+                            <i class="uil uil-twitter-alt icon"></i>
+                            <i class="uil uil-linkedin-alt icon"></i>
+                            </div>
+                            <div class="line"></div>
+                        </div>
+                    </div>  
+                </div>
+    
+                <div class="scrollDown">
+                    <a href="#roomDetails">
+                        <i class="uil uil-arrow-down icon"></i>
+                    </a>
+                    </div>
+            </div> 
+            
+    
+            <div class="swiper-pagination"></div>
+        </div>       
+    </div>
+   
+    <div class="bookingForm">
+        <div class="formContainer container">
+            <span class="formTitle">
+                Fill the form to book this room.
+            </span>
+
+            <form method="" class="grid">
+                <div class="singleField">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Enter Your First Name"  required>
+                </div>
+
+                <div class="singleField">
+                    <label for="secName">Second Name</label>
+                    <input type="text" id="secName" name="secName" placeholder="Enter Your Second Name"  required>
+                </div>
+
+                <div class="singleField">
+                    <label for="nationality">Nationality</label>
+                    <input type="text" id="nationality" name="nationality" placeholder="Enter Your nationality Name"  required>
+                </div>
+
+                <div class="singleField">
+                    <label for="passportNo">Passport Number</label>
+                    <input type="text" id="passportNo" name="passportNo" placeholder="Enter Your Passport Number"  required>
+                </div>
+
+                <div class="singleField">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter Your Email Address"  required>
+                </div>
+
+                <div class="singleField">
+                    <label for="persons">Number Person</label>
+                    <input type="number" id="persons" name="persons" placeholder="E.g: 2"  required>
+                </div>
+
+                <div class="singleField">
+                    <label for="children">Children (Persons Under 12)</label>
+                    <input type="number" id="children" name="children" placeholder="E.g 2">
+                </div>
+
+                <div class="optionDiv">
+                    <label for="pickUp">Airport Pick Up</label>
+                    <div class="input flex">
+                       <div class="radio">
+                        <input type="radio" name="yes" class="input1">
+                        <!-- <span class="after"></span> -->
+                       </div>
+                        <label for="yes">Yes, pick me up.</label>
+                    </div>
+
+                    <div class="input flex">
+                        <div class="radio">
+                            <input type="radio" name="no">
+                            <!-- <span class="after input2"></span> -->
+                        </div>
+                        <label for="mobile">No, thank you.</label>              
+                    </div>
+                </div>
+
+                <div class="singleField">
+                    <label for="arrivalDate">Arrival Date</label>
+                    <input type="date" id="arrivalDate" name="arrivalDate"  required>
+                </div>
+
+                <div class="singleField">
+                    <label for="depDate">Departure Date</label>
+                    <input type="date" id="depDate" name="depDate"  required>
+                </div>
+
+                <div class="singleField">
+                    <label for="message">Any Message (Optional)</label>
+                   <textarea name="message" id="message" placeholder="Enter any message"></textarea>
+                </div>
+
+                <button class="btn bg">
+                    book this room
+                </button>
+            </form>
+        </div>
+    </div>
+    <!-- SINGLE ROOM DETAILS PAGE ENDS-->
+
+    <!-- EXTRA SERVICE SECTION -->
+    <div class="section extraService">
+        <div class="sectionContent container">
+
+           <div class="textSection">
+            <span class="subTitle">BEST PRICE  IN BELMOND </span>
+            <span class="secTitle">
+                Extra Services
+            </span>
+
+            <p>
+            Embrace true escapism and experience the next level of excellence with Belmond’s selection of Signature Suites and Villas. Our most opulent accommodation around the globe promises a truly indulgent getaway⁠—where every pristine detail is taken care of. <br>
+            Settle into an iconic dwelling and reconnect with a deep sense of place and history. Within your personal oasis, time stands still and unique features – from private pools to verdant terraces – sparkle anew. <br>
+            Gaze out at a new vantage point, only available to you. Two-hour baths with your favourite book. Long breakfasts in privacy as the sun rises on the horizon. Sleeping in and taking it slow. In a Signature Suite & Villa, the comfort and style take on a whole new meaning.  </p>
+            
+
+            <div class="reservationsNumber flex">
+                <i class="uil uil-calling icon"></i>
+                <div>
+                    <span class="subTitle">
+                        For more information
+                    </span>
+                    <a href="tel:0845 077 2222">0845 077 2222</a>
+                </div>
+            </div>
+           </div>
+
+
+            <div class="swiperSection swiper">
+                <div class="swiper-wrapper">
+                    <div class="singleService swiper-slide">
+                        <div class="imgDiv">
+                            <img src="./Assets/safe.webp" alt="Hotel Safe Box">
+                        </div>
+                        <div class="serviceInfo">
+                            <span class="serviceTitle">Elsafe Box</span>
+                            <h3 class="price">$16<small> / Day</small></h3>
+
+                            <div class="checkList grid">
+                                <div class="singleCheck flex">
+                                    <i class="uil uil-check-circle icon"></i>
+                                    <p>Round-trip transfers</p>
+                                </div>
+                                <div class="singleCheck flex">
+                                    <i class="uil uil-check-circle icon"></i>
+                                    <p>Dedicated Host service</p>
+                                </div>
+                                <div class="singleCheck flex">
+                                    <i class="uil uil-times-circle icon"></i>
+                                    <p>Daily breakfast</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="singleService swiper-slide">
+                        <div class="imgDiv">
+                            <img src="./Assets/dining.webp" alt="Hotel Safe Box">
+                        </div>
+                        <div class="serviceInfo">
+                            <span class="serviceTitle">In-room Dining</span>
+                            <h3 class="price">$15<small> / Day</small></h3>
+                          
+
+                            <div class="checkList grid">
+                                <div class="singleCheck flex">
+                                    <i class="uil uil-check-circle icon"></i>
+                                    <p>Round-trip transfers</p>
+                                </div>
+                                <div class="singleCheck flex">
+                                    <i class="uil uil-check-circle icon"></i>
+                                    <p>Complimentary laundry service</p>
+                                </div>
+                                <div class="singleCheck flex">
+                                    <i class="uil uil-check-circle icon"></i>
+                                    <p> Complimentary curated in-suite bar and coffee</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="singleService swiper-slide">
+                        <div class="imgDiv">
+                            <img src="./Assets/bar.webp" alt="Hotel Safe Box">
+                        </div>
+                        <div class="serviceInfo">
+                            <span class="serviceTitle">In-room Bar</span>
+                            <h3 class="price">$20<small> @ Item</small></h3>
+                          
+
+                            <div class="checkList grid">
+                                <div class="singleCheck flex">
+                                    <i class="uil uil-check-circle icon"></i>
+                                    <p>Complimentary curated in-suite bar and coffee</p>
+                                </div>
+                                <div class="singleCheck flex">
+                                    <i class="uil uil-check-circle icon"></i>
+                                    <p>Complimentary laundry service</p>
+                                </div>
+                                <div class="singleCheck flex">
+                                    <i class="uil uil-times-circle icon"></i>
+                                    <p>A fully bespoke VIP stay experience</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="singleService swiper-slide">
+                        <div class="imgDiv">
+                            <img src="./Assets/housekeeping.webp" alt="Hotel Safe Box">
+                        </div>
+                        <div class="serviceInfo">
+                            <span class="serviceTitle">Special Room Cleaning</span>
+                            <h3 class="price">$30<small> / Day</small></h3>
+
+                            <div class="checkList grid">
+                                <div class="singleCheck flex">
+                                    <i class="uil uil-check-circle icon"></i>
+                                    <p>Round-trip transfers</p>
+                                </div>
+                                <div class="singleCheck flex">
+                                    <i class="uil uil-check-circle icon"></i>
+                                    <p>A fully bespoke VIP stay experience</p>
+                                </div>
+                                <div class="singleCheck flex">
+                                    <i class="uil uil-check-circle icon"></i>
+                                    <p>Complimentary laundry service</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="swiper-pagination"></div>             
+            </div>
+        </div>
+    </div>
+    <!-- EXTRA SERVICE SECTION ENDS -->
+   <!-- Footer Section -->
+   <section class="footer">
+    <div class="sectionContainer container">
+    <div class="mainContent grid">
+
+        <div class="introDiv">
+            <div class="logoDiv flex">
+                <!-- <img src="./Assets/logo.webp" alt="Logo Image"> -->
+                <h3>BELMOND</h3>
+            </div>
+            
+            <div>
+                <img src="./Assets/footer.gif" alt="sponsor logo" style="width: 100%;">
+              
+            </div>
+        </div>
+
+        <div class="support">
+            <div class="title">
+                <h2>Support</h2>
+            </div>
+            <ul>
+                <li>Bookings</li>
+                <li>Help Videos</li>
+                <li>Accessories</li>
+                <li>Support</li>
+                <li>Features</li>
+            </ul>
+        </div>
+
+        <div class="services">
+            <div class="title">
+                <h2>Services</h2>
+            </div>
+            <ul>
+                <li>Payment & Tips</li>
+                <li>Terms & Service</li>
+                <li>Swimming Pool</li>
+                <li>Restaurants</li>
+                <li>Q&A</li>
+            </ul>
+        </div>
+
+        <div class="about">
+            <div class="title">
+                <h2>About</h2>
+            </div>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li>History</li>
+                <li>Contact</li>
+                <li>News</li>
+                <li><a href="jobs.html">Careers</a></li>
+            </ul>
+        </div>
+
+        <div class="address">
+            <div class="title">
+                <h2>Address</h2>
+            </div>
+            <p>Piazza San Giovanni del Toro 2, 84010 Ravello (SA), Italy</p>
+            <div class="socials flex">
+                <i class='bx bxl-facebook icon'></i>
+                <i class='bx bxl-twitter icon' ></i>
+                <i class='bx bxl-instagram-alt icon' ></i>
+                <i class='bx bxl-telegram icon' ></i>
+            </div>
+        </div>
+    
+    </div>
+
+    <div class="lowerDivision flex">
+        <p>All rights reserved - Elite 2025</p>
+        <ul class="flex">
+            <p>Services</p>
+            <p>Partners</p>
+            <p>Feedbacks</p>
+            <p><a href="login/index.html">Administrators</a></p>
+        </ul>
+    </div>
+    </div>
+</section>
+<!-- Footer Section Ends -->
+
+<!-- Link swiper.js -->
+<script src="./swiper-bundle.min.js"></script>
+<!-- Link to JS -->
+<script src="./index.js"></script>
+
+
+</body>
+</html>

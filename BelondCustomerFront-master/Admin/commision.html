@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboardd</title>
+
+    <!-- Link to css -->
+    <link rel="stylesheet" href="./admin.css">
+    <link rel="stylesheet" href="../index.css">
+    <!-- Link to icons -->
+   
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Link swiper css -->
+    <link rel="stylesheet" href="./swiper-bundle.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="api.js"></script>
+    <script src="commission.js"></script>
+</head>
+<body>
+
+    <div class="adminDasboard flex">
+
+        <div class="sideMenu">
+            <div class="logoDiv flex">
+                <img src="../Assets/logo.webp" alt="Logo Image" style="width: 100px; height: 100px;">
+            </div>
+          <div class="menu">
+            <ul class="menuItem grid">
+                <li class="menuList flex" id="dashboardTab" style="display: block;">
+                    <a href="dashboard.html" class="menuLink linkActive flex Active">
+                        <i class="uil uil-create-dashboard icon"></i>
+                        <span class="text">Dashboard</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex">
+                    <a href="booking.html" class="menuLink flex">
+                        <i class="uil uil-building icon"></i>
+                        <span class="text">Bookings</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex"> 
+                    <a href="withdraw.html" class="menuLink flex">
+                        <i class="uil uil-book-open icon"></i>
+                        <span class="text">Withdraw List</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex">
+                    <a href="premium.html" class="menuLink flex">
+                        <i class="uil uil-clipboard-alt icon"></i>
+                        <span class="text">Premium</span>
+                    </a>
+                </li> 
+                <li class="menuList flex"> 
+                    <a href="user.html" class="menuLink flex">
+                        <i class="uil uil-user-circle icon"></i>
+                        <span class="text">Users</span>
+                    </a>
+                </li> 
+                
+                <li class="menuList flex"> 
+                    <a href="deposit.html" class="menuLink flex">
+                        <i class="uil uil-key-skeleton icon"></i>
+                        <span class="text">Deposit Details</span>
+                    </a>
+                </li>
+
+                <li class="menuList flex"> 
+                    <a href="commision.html" class="menuLink flex">
+                        <i class="uil uil-comment-message icon"></i>
+                        <span class="text">Commission</span>
+                    </a>
+                </li> 
+
+                <!-- <li class="menuList flex"> 
+                    <a href="bonus.html" class="menuLink flex">
+                        <i class="uil uil-money-bill icon"></i>
+                        <span class="text">Bonus Details</span>
+                    </a>
+                </li>  -->
+                
+                <li class="menuList flex" id="aboutUsTab" style="display: block;"> 
+                    <a href="about.html" class="menuLink flex">
+                        <i class="uil uil-file-info-alt icon"></i>
+                        <span class="text">About Us</span>
+                    </a>
+                </li> 
+                
+                <li class="menuList flex" id="socialMediaTab" type="display:block"> 
+                    <a href="media.html" class="menuLink flex">
+                        <i class="uil uil-whatsapp icon"></i>
+                        <span class="text">Social Media</span>
+                    </a>
+                </li> 
+                
+
+                <li class="menuList flex" id="adminTab" style="display: block;"> 
+                    <a href="admins.html" class="menuLink flex">
+                        <i class="uil uil-user-circle icon"></i>
+                        <span class="text">Admins</span>
+                    </a>
+                </li> 
+            </ul>
+          </div>
+
+          <div class="accountDiv">
+            
+
+            <div class="accountBtns flex">
+                <a onclick="logout()">
+                    <button class="btn bg flex">
+                        <i class="uil uil-sign-out-alt icon"></i>
+                        Log Out
+                    </button>
+                </a>
+            </div>
+           
+          </div>
+        </div>
+
+        <div class="propertiesBody">
+            <div class="top flex">
+                <h1 class="titleText">
+                    Commission
+                </h1>
+                <input type="text" id="phone" onkeyup="search()" placeholder="Search" style="padding: 7px;
+                width: 30%;">
+                <p>Hello , welcome to BELMOND!</p>
+            
+            </div>
+
+            <div class="allProperties">
+                <table>
+                    <tr>
+                    <th>#</th>
+                    <th>User Name</th>
+                    <th>Email</th>
+                    <th>Phone No</th>
+                    <th> Commision Amount</th>                    
+                </tr>
+                <tbody id="bookingsTable">
+                    
+                    <!-- <tr>
+                        <td class="amenities">
+                            <p>1</p>      
+                        </td>
+                        <td class="amenities">
+                            <p>Checked Amenities</p>
+                        </td>
+                        <td class="expiringDate"> 
+                            <p>Room Last Booked</p> 
+                        </td>
+                        <td class="expiringDate">
+                            <i class="uil uil-calendar-alt icon"></i><span class="date">2022/11/18</span>                            
+                        </td>
+                        <td>
+                            <button  class="flex btn bg">
+                                <i class="uil uil-plus"></i>Add Commision Amount 
+                            </button> </td>
+                    </tr> -->
+                </tbody>
+                    
+                </table>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+
+
+<script src="roleWiseAuth.js"></script>
+<script src="constant.js"></script>

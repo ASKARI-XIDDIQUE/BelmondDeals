@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <title>Admin Dashboardd</title>
+
+    <!-- Link to css -->
+    <link rel="stylesheet" href="./admin.css">
+    <link rel="stylesheet" href="../index.css">
+    <!-- Link to icons -->
+   
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Link swiper css -->
+    <link rel="stylesheet" href="./swiper-bundle.min.css">
+    
+</head>
+<body>
+
+    <div class="adminDasboard flex">
+
+        <div class="sideMenu">
+            <div class="logoDiv flex">
+                <!-- <img src="../Assets/logo.webp" alt="Logo Image"> -->
+                <h3>Belmond</h3>
+            </div>
+          <div class="menu">
+            <ul class="menuItem grid">
+                <li class="menuList flex">
+                    <a href="admin.html" class="menuLink linkActive flex">
+                        <i class="uil uil-create-dashboard icon"></i>
+                        <span class="text">Dashboard</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex">
+                    <a href="./properties.html" class="menuLink flex">
+                        <i class="uil uil-building icon"></i>
+                        <span class="text">Room & Suites</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex"> 
+                    <a href="bookings.html" class="menuLink flex">
+                        <i class="uil uil-book-open icon"></i>
+                        <span class="text">Bookings</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex">
+                    <a href="todo.html" class="menuLink flex">
+                        <i class="uil uil-clipboard-alt icon"></i>
+                        <span class="text">To do</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex"> 
+                    <a href="guests.html" class="menuLink flex">
+                        <i class="uil uil-user-circle icon"></i>
+                        <span class="text">Guests</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex"> 
+                    <a href="admins.html" class="menuLink flex">
+                        <i class="uil uil-key-skeleton icon"></i>
+                        <span class="text">Administrators</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex"> 
+                    <a href="reviews.html" class="menuLink flex">
+                        <i class="uil uil-comment-message icon"></i>
+                        <span class="text">Reviews</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex"> 
+                    <a href="careers.html" class="menuLink flex">
+                        <i class="uil uil-graduation-cap icon"></i>
+                        <span class="text">Careers</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex"> 
+                    <a href="calender.html" class="menuLink flex">
+                        <i class="uil uil-calendar-alt icon"></i>
+                        <span class="text">Calendar</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex"> 
+                    <a href="updates.html" class="menuLink flex">
+                        <i class="uil uil-bell icon"></i>
+                        <span class="text">Updates</span>
+                    </a>
+                </li> 
+            </ul>
+          </div>
+
+          <div class="accountDiv">
+            <div class="imgDiv">
+                <img src="../Assets/user (8).webp" alt="Admin Image">
+            </div>
+            <span class="name">燕西 管理员</span>
+            <p></p>
+
+            <div class="accountBtns flex">
+                <a href="../login.html">
+                    <button class="btn bg flex">
+                        <i class="uil uil-sign-out-alt icon"></i>
+                        Log Out
+                    </button>
+                </a>
+                <a href="settings.html">
+                    <button class="btn bg flex">
+                        <i class="uil uil-setting icon"></i>
+                    </button>
+                </a>
+            </div>
+           
+          </div>
+        </div>
+
+        <div class="settingsBody">
+            <div class="top flex greyBg">
+                <h1 class="titleText">
+                   Settings Page
+                </h1>
+                <p>View your details and update if you need to.</p>
+                
+            </div>
+
+            <div class="settingsDiv">
+                <div class="adminDetails">
+                    <h3 class="detailsTitle">Administrator Details</h3>
+
+                    <div class="detailsContainer">
+                        <div class="detaialsDiv">
+                            <div class="coverPic">
+                                <img  src="../Assets/island.webp" class="coverPicture" alt="admin Cover image" >
+                                <span class="coverOverlay">Charmaine Tan</span>
+                            </div>
+                            <div class="profilePic">
+                                <img src="../Assets/user (19).webp" alt="Admin Profile picture">
+                            </div>
+    
+                           <div class="detailsBody flex">
+                               <div class="leftDiv">
+                                    <h2>Charmaine Tan</h2>
+                                    <span class="level flex"><i class="uil uil-award icon" ></i> Administrator</span>
+                                    <p>charmaine@outlook.com</p>
+
+                                    <div class="socials">
+                                        <a href=""><i class="uil uil-facebook-messenger icon"></i></a>
+            
+                                        <a href=""><i class="uil uil-twitter icon"></i></a>
+            
+                                        <a href=""><i class="uil uil-instagram-alt icon"></i></a>
+            
+                                        <a href=""><i class="uil uil-linkedin icon"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="rightDiv flex">
+                                    <div>
+                                        <div class="singleDetail">
+                                            <span class="label">First Name</span>
+                                            <span class="value">Charmaine</span>
+                                        </div>
+        
+                                        <div class="singleDetail">
+                                            <span class="label">Last Name</span>
+                                            <span class="value">Tan</span>
+                                        </div>
+        
+                                        <div class="singleDetail">
+                                            <span class="label">User Name</span>
+                                            <span class="value">charmtan</span>
+                                        </div>
+                                    </div>
+
+
+                                <div>
+                                        <div class="singleDetail">
+                                            <span class="label">Password</span>
+                                            <span class="value">Thanks@22</span>
+                                        </div>
+
+                                        <div class="singleDetail">
+                                            <span class="label">Phone Number</span>
+                                            <span class="value">+444 890 4459</span>
+                                        </div>
+                                        
+                                        <div class="singleDetail">
+                                            <span class="label">Date of Birth</span>
+                                            <span class="value">1989/12/12</span>
+                                        </div> 
+                                </div>
+                                
+                                <div>
+                                        <div class="singleDetail">
+                                            <span class="label">Gender</span>
+                                            <span class="value">Male</span>
+                                        </div>
+
+                                        <div class="singleDetail">
+                                            <span class="label">Documents</span>
+                                            <span class="docs flex">
+                                                <div class="singleDoc flex">
+                                                    <i class="uil uil-file-lock-alt "></i>
+                                                    <span class="value">My File</span>
+                                                    <a href="" download="" class="flex"><i class="uil uil-import icon"></i> </a>
+                                                </div>
+                                            </span>
+                                        </div>
+                                </div>
+
+                                </div>
+
+                           
+                           </div>
+                        </div>
+                    </div>
+
+                    <h3 class="updateTitle">Update Details</h3>
+                    <div class="formContainer">
+                       <form method="POST" class="flex">
+                          <div>
+                            <div class="singleField">
+                                <label for="FirstName">First Name</label>
+                                <input type="text" id="FirstName" name="firstName" placeholder="e.g: CHarmaine" required>
+                            </div>
+
+                            <div class="singleField">
+                                <label for="secName">Second Name</label>
+                                <input type="text" id="secName" name="secondName" placeholder="e.g: Tan" required>
+                            </div>
+
+                            <div class="singleField">
+                                <label for="userName">User Name</label>
+                                <input type="text" id="userName" name="userName" placeholder="e.g: charmtan123" required>
+                            </div>
+
+                            <div class="singleField">
+                                <label for="phone">Phone Number</label>
+                                <input type="number" id="phone" name="phone" placeholder="e.g: +256 789 688 909" required>
+                            </div>
+
+                            <div class="singleField">
+                                <label for="profilePicture">Profile Picture </label>
+                                <input type="file" name="profilePicture" id="profilePicture" required>
+                            </div>
+                            
+
+                           
+                          </div>
+
+                            <div>
+
+                                <div class="singleField">
+                                    <label for="coverPic">Cover Picture </label>
+                                    <input type="file" name="coverPic" id="coverPic" required>
+                                </div>
+
+
+                                <div class="singleField">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" placeholder="e.g: example@outlook.com" required>
+                                </div>
+
+                                <div class="singleField">
+                                    <label for="nationality">Nationality</label>
+                                    <input type="text" id="nationality" name="nationality" placeholder="e.g: Canada" required>
+                                </div>
+
+                                <div class="singleField">
+                                    <label for="dob">Date Of Birth</label>
+                                    <input type="date" id="dob" name="dob" placeholder="e.g: 1989/8/14" required>
+                                </div>
+
+                                <div class="singleField">
+                                    <label for="gender">Gender</label>
+                                    <input type="text" id="gender" name="gender" placeholder="e.g: male" required>
+                                </div>
+  
+                            </div>
+
+                            <div class="socialLinks">
+                                <div class="singleField">
+                                    <label for="facebook">Facebook</label>
+                                    <input type="text" id="facebook" name="fbLink" placeholder="https://www.facebook.com">
+                                </div>
+
+                                <div class="singleField">
+                                    <label for="twitter">Twitter</label>
+                                    <input type="text" id="twitter" name="twtLink" placeholder="https://www.twitter.com">
+                                </div>
+
+                                <div class="singleField">
+                                    <label for="instagram">Instagram</label>
+                                    <input type="text" id="instagram" name="igLink" placeholder="https://www.instagram.com">
+                                </div>
+
+                                <div class="singleField">
+                                    <label for="linkedin">LinkedIn</label>
+                                    <input type="text" id="linkedin" name="linkedinLink" placeholder="https://www.linkedin.com">
+                                </div>
+                            </div>
+
+                           <div>
+                                <div class="singleField">
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password" name="password" placeholder="Create Password" required>
+                                </div>
+
+                                <div class="singleField">
+                                    <label for="cpassword">Comfirm Password</label>
+                                    <input type="password" id="cpassword" name="cpassword" placeholder="Comfirm Password" required>
+                                </div>
+
+                                <div class="singleField">
+                                    <label for="doc">Personal Document</label>
+                                    <input type="file" id="doc" name="document" required>
+                                </div>
+
+                                   
+
+                                <button class="btn flex bg" name="submit"><i class="uil uil-fidget-spinner icon"></i> Update Details</button>
+                           </div>
+
+                           
+                       </form>
+                    </div>
+                </div> 
+            </div>
+        </div>    
+    </div> 
+    
+
+   
+</body>
+</html>

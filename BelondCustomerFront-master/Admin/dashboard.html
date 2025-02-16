@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <!-- Link to css -->
+    <link rel="stylesheet" href="./admin.css">
+    <link rel="stylesheet" href="../index.css">
+    <!-- Link to icons -->
+   
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Link swiper css -->
+    <link rel="stylesheet" href="./swiper-bundle.min.css">
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="api.js"></script>
+</head>
+<body>
+    <div class="adminDasboard flex">
+        <div class="sideMenu">
+            <div class="logoDiv flex">
+                <img src="../Assets/logo.webp" alt="Logo Image" style="width: 100px; height: 100px;">
+            </div>
+          <div class="menu">
+            <ul class="menuItem grid">
+                <li class="menuList flex" id="dashboardTab" style="display: block;">
+                    <a href="dashboard.html" class="menuLink linkActive flex Active">
+                        <i class="uil uil-create-dashboard icon"></i>
+                        <span class="text">Dashboard</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex">
+                    <a href="booking.html" class="menuLink flex">
+                        <i class="uil uil-building icon"></i>
+                        <span class="text">Bookings</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex"> 
+                    <a href="withdraw.html" class="menuLink flex">
+                        <i class="uil uil-book-open icon"></i>
+                        <span class="text">Withdraw List</span>
+                    </a>
+                </li> 
+
+                <li class="menuList flex">
+                    <a href="premium.html" class="menuLink flex">
+                        <i class="uil uil-clipboard-alt icon"></i>
+                        <span class="text">Premium</span>
+                    </a>
+                </li> 
+                <li class="menuList flex"> 
+                    <a href="user.html" class="menuLink flex">
+                        <i class="uil uil-user-circle icon"></i>
+                        <span class="text">Users</span>
+                    </a>
+                </li> 
+                
+                <li class="menuList flex"> 
+                    <a href="deposit.html" class="menuLink flex">
+                        <i class="uil uil-key-skeleton icon"></i>
+                        <span class="text">Deposit Details</span>
+                    </a>
+                </li>
+
+                <li class="menuList flex"> 
+                    <a href="detailsImage.html" class="menuLink flex">
+                        <i class="uil uil-key-skeleton icon"></i>
+                        <span class="text">Details Image</span>
+                    </a>
+                </li>
+
+                <li class="menuList flex"> 
+                    <a href="commision.html" class="menuLink flex">
+                        <i class="uil uil-comment-message icon"></i>
+                        <span class="text">Commission</span>
+                    </a>
+                </li> 
+
+                <!-- <li class="menuList flex"> 
+                    <a href="bonus.html" class="menuLink flex">
+                        <i class="uil uil-money-bill icon"></i>
+                        <span class="text">Bonus Details</span>
+                    </a>
+                </li>  -->
+                
+                <li class="menuList flex" id="aboutUsTab" style="display: block;"> 
+                    <a href="about.html" class="menuLink flex">
+                        <i class="uil uil-file-info-alt icon"></i>
+                        <span class="text">About Us</span>
+                    </a>
+                </li> 
+                
+                <li class="menuList flex" id="socialMediaTab" type="display:block"> 
+                    <a href="media.html" class="menuLink flex">
+                        <i class="uil uil-whatsapp icon"></i>
+                        <span class="text">Social Media</span>
+                    </a>
+                </li> 
+                
+
+                <li class="menuList flex" id="adminTab" style="display: block;"> 
+                    <a href="admins.html" class="menuLink flex">
+                        <i class="uil uil-user-circle icon"></i>
+                        <span class="text">Admins</span>
+                    </a>
+                </li> 
+            </ul>
+          </div>
+
+          <div class="accountDiv">
+            
+
+            <div class="accountBtns flex">
+                <a onclick="logout()">
+                    <button class="btn bg flex">
+                        <i class="uil uil-sign-out-alt icon"></i>
+                        Log Out
+                    </button>
+                </a>
+            </div>
+           
+          </div>
+        </div>
+
+        <div class="body">
+            <div class="top flex">
+                <h1 class="titleText">
+                    Dashboard
+                </h1>
+                <p>Hello , welcome to BELMOND!</p>
+            </div>
+            
+            <div class="summaryDiv flex">
+                <div>
+                    <h1 id="totUsr">0</h1>
+                    <p>Total Users</p>
+                    <h1 class="overlay">06</h1>
+                </div>
+                <div>
+                    <h1 id="totBok">0</h1>
+                    <p>Total Booking</p>
+                    <h1 class="overlay">12</h1>
+                </div>
+                <div>
+                    <h1 id="totCom">$0</h1>
+                    <p>Total Commission</p>
+                    <h1 class="overlay">10</h1>
+                </div>
+                <div>
+                    <h1 id="totWith">$0</h1>
+                    <p>Total Withdraw</p>
+                    <h1 class="overlay">13,700</h1>
+                </div>
+                <div>
+                    <h1 id="totDep">$0</h1>
+                    <p>Total Deposit</p>
+                    <h1 class="overlay">13,700</h1>
+                </div>
+            </div>
+
+            <div class="homeTodos">
+                <div class="todoDiv">
+                    <div class="divTitle flex">
+                        <h3>High Priority Assigments</h3>
+                    </div>
+    
+                    <div class="todos flex">
+                        <div class="singleTodo">
+                            <div class="flex">
+                                <span>2022/01/08</span>
+                                <div class="btns">
+                                  <a href="todo.html">
+                                    <i class="uil uil-file-info-alt icon"></i>
+                                  </a>
+                                </div>
+                            </div>
+                            <h3 class="todoTitle">Brainstorming</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque eligendi quis rerum modi voluptate accusamus iste, ipsam officiis necessitatibus. Excepturi!</p>
+                        </div>
+                        <div class="singleTodo">
+                            <div class="flex">
+                                <span>2022/01/08</span>
+                                <div class="btns">
+                                    <a href="todo.html">
+                                      <i class="uil uil-file-info-alt icon"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="todoTitle">Meeting with Mr. Arison</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque eligendi quis rerum modi voluptate accusamus iste, ipsam officiis necessitatibus. Excepturi!</p>
+                        </div>
+                        <div class="singleTodo">
+                            <div class="flex">
+                                <span>2022/01/08</span>
+                                <div class="btns">
+                                    <a href="todo.html">
+                                      <i class="uil uil-file-info-alt icon"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="todoTitle">Add new Suites</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque eligendi quis rerum modi voluptate accusamus iste, ipsam officiis necessitatibus. Excepturi!</p>
+                        </div>
+                        <div class="singleTodo">
+                            <div class="flex">
+                                <span>2022/01/08</span>
+                                <div class="btns">
+                                    <a href="todo.html">
+                                      <i class="uil uil-file-info-alt icon"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="todoTitle">Check commission lists</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque eligendi quis rerum modi voluptate accusamus iste, ipsam officiis necessitatibus. Excepturi!</p>
+                        </div>
+                      
+                    </div>
+    
+                   
+                </div>
+            </div>
+
+            <div class="summaryPropertyDiv">
+                <div class="divTitle flex">
+                    <h3>Rooms & Suites</h3>
+                    <div class="line"></div>
+                    <div>
+                         <a href="properties.html" class="flex btn">
+                            All Suites 
+                            <i class="uil uil-angle-right-b icon"></i>
+                         </a>
+                    </div>
+                </div>
+               <div class="propertyContainer flex">
+
+                    <div class="singleProperty">
+                    <div class="imgDiv">
+                        <img class="apartImg" src="../Assets/deluxe-room-entebbe-hotel-horizon.webp" alt="Apartment Image">
+
+                        <div class="location loctionActive">
+                            <span class="apartName">
+                            Delux Suite
+                            </span>
+                            <span class="apartLocation">
+                            Booked
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="imgInfo">
+
+                        <div class="tenantImage">
+                            <img src="../Assets/user (1).webp" alt="Tenant Image">
+                        </div>
+                        <div class="tenantImage">
+                            <img src="../Assets/user (5).webp" alt="Tenant Image">
+                        </div>
+
+                        <div class="amenities flex">
+                            <p class="flex"><i class="uil uil-bed icon"></i> 2</p>
+
+                            <p class="flex"><i class="uil uil-bath"></i>2</p>
+
+                            <p><i class="uil uil-wifi"></i></p>
+
+                            
+                        </div>
+                        
+                        <div class="flex">
+                            <h1 class="price">$200 <small>/Night</small></h1>
+                            <span class="status">
+                        </div>
+                
+                        <a href="propertyDetails.html">
+                            <button class="btn">
+                                VIEW DETAILS  <i class="uil uil-arrow-up-right icon"></i>
+                            </button>
+                        </a>
+        
+                    </div>
+                    </div> 
+                    <div class="singleProperty">
+                    <div class="imgDiv">
+                        <img class="apartImg" src="../Assets/family-room-2-hotel-horizon-entebbe.webp" alt="Apartment Image">
+
+                        <div class="location loctionActive">
+                            <span class="apartName">
+                            Family Suite
+                            </span>
+                            <span class="apartLocation">
+                            Free
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="imgInfo">
+
+                        <div class="tenantImage">
+                            <img src="../Assets/user (1).webp" alt="Tenant Image">
+                        </div>
+                        <div class="tenantImage">
+                            <img src="../Assets/user (5).webp" alt="Tenant Image">
+                        </div>
+
+                        <div class="amenities flex">
+                            <p class="flex"><i class="uil uil-bed icon"></i> 2</p>
+
+                            <p class="flex"><i class="uil uil-bath"></i>2</p>
+
+                            <p><i class="uil uil-wifi"></i></p>
+
+                            <p><i class='bx bxs-dog icon'></i></p>
+                        </div>
+                        
+                        <div class="flex">
+                            <h1 class="price">$350 <small>/Night</small></h1>
+                            <span class="status">
+                        </div>
+                
+                        <a href="propertyDetails.html">
+                            <button class="btn">
+                                VIEW DETAILS  <i class="uil uil-arrow-up-right icon"></i>
+                            </button>
+                        </a>
+        
+                    </div>
+                    </div> 
+                    <div class="singleProperty">
+                    <div class="imgDiv">
+                        <img class="apartImg" src="../Assets/honeymoon-couple-suite-hotel-horizon-entebbe.webp" alt="Apartment Image">
+
+                        <div class="location loctionActive">
+                            <span class="apartName">
+                            Honeymoon Suite
+                            </span>
+                            <span class="apartLocation">
+                            Booked
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="imgInfo">
+
+                        <div class="tenantImage">
+                            <img src="../Assets/user (1).webp" alt="Tenant Image">
+                        </div>
+                        <div class="tenantImage">
+                            <img src="../Assets/user (5).webp" alt="Tenant Image">
+                        </div>
+
+                        <div class="amenities flex">
+                            <p class="flex"><i class="uil uil-bed icon"></i> 2</p>
+
+                            <p class="flex"><i class="uil uil-bath"></i>2</p>
+
+                            <p><i class="uil uil-wifi"></i></p>
+
+                            <p><i class='bx bxs-dog icon'></i></p>
+                        </div>
+                        
+                        <div class="flex">
+                            <h1 class="price">$500 <small>/Night</small></h1>
+                            <span class="status">
+                        </div>
+                
+                        <a href="propertyDetails.html">
+                            <button class="btn">
+                                VIEW DETAILS  <i class="uil uil-arrow-up-right icon"></i>
+                            </button>
+                        </a>
+        
+                    </div>
+                    </div> 
+                    <div class="singleProperty">
+                    <div class="imgDiv">
+                        <img class="apartImg" src="../Assets/standard-room-entebbe-hotel-horizon-1.webp" alt="Apartment Image">
+
+                        <div class="location loctionActive">
+                            <span class="apartName">
+                            Standard Suite
+                            </span>
+                            <span class="apartLocation">
+                            Booked
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="imgInfo">
+
+                        <div class="tenantImage">
+                            <img src="../Assets/user (1).webp" alt="Tenant Image">
+                        </div>
+                        <div class="tenantImage">
+                            <img src="../Assets/user (5).webp" alt="Tenant Image">
+                        </div>
+
+                        <div class="amenities flex">
+                            <p class="flex"><i class="uil uil-bed icon"></i> 2</p>
+
+                            <p class="flex"><i class="uil uil-bath"></i>2</p>
+
+                            <p><i class="uil uil-wifi"></i></p>
+
+                            <p><i class='bx bxs-dog icon'></i></p>
+                        </div>
+                        
+                        <div class="flex">
+                            <h1 class="price">$150 <small>/Night</small></h1>
+                            <span class="status">
+                        </div>
+                
+                        <a href="propertyDetails.html">
+                            <button class="btn">
+                                VIEW DETAILS  <i class="uil uil-arrow-up-right icon"></i>
+                            </button>
+                        </a>
+        
+                    </div>
+                    </div> 
+
+                   
+               </div>
+
+               
+            </div>
+
+            <div class="homeUpdatesDiv">
+                <h3>Top 3 Updates</h3>
+
+                <div class="singleUpdate">
+                    <div class="cardTop flex">
+                        <span class="updateID">Belmond #001</span>
+                        <span class="date">2022/04/08</span>
+                        <i class='bx bxs-pin icon'></i>
+                    </div>
+                    <p>The property market, and in particular the residential property market, has been the focus of much discussion and debate from stakeholders for several years. While the Budget and the Finance Bill did not include significant changes for the Built Environment sector, a number of measures were included aimed at encouraging the development of residential property and increasing the housing supply. We review relevant changes that may impact on developers and property owners in Ireland.</p>
+                    <small>By Charmaine Tan</small>
+                </div>
+                
+                <div class="singleUpdate">
+                    <div class="cardTop flex">
+                        <span class="updateID">Belmond #001</span>
+                        <span class="date">2022/04/08</span>
+                        <i class='bx bxs-pin icon'></i>
+                    </div>
+                    <p>The property market, and in particular the residential property market, has been the focus of much discussion and debate from stakeholders for several years. While the Budget and the Finance Bill did not include significant changes for the Built Environment sector, a number of measures were included aimed at encouraging the development of residential property and increasing the housing supply. We review relevant changes that may impact on developers and property owners in Ireland.</p>
+                    <small>By Charmaine Tan</small>
+                </div>
+
+                <div class="singleUpdate">
+                    <div class="cardTop flex">
+                        <span class="updateID">Belmond #001</span>
+                        <span class="date">2022/04/08</span>
+                        <i class='bx bxs-pin icon'></i>
+                    </div>
+                    <p>The property market, and in particular the residential property market, has been the focus of much discussion and debate from stakeholders for several years. While the Budget and the Finance Bill did not include significant changes for the Built Environment sector, a number of measures were included aimed at encouraging the development of residential property and increasing the housing supply. We review relevant changes that may impact on developers and property owners in Ireland.</p>
+                    <small>By Charmaine Tan</small>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+
+
+    <!-- Link to js -->
+    <script src="admin.js"></script>
+    <script src="roleWiseAuth.js"></script>
+</body>
+</html>
+<script src="constant.js"></script>

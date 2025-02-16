@@ -1,0 +1,245 @@
+/* Global Styles */
+body {
+  margin: 0;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Banner Styles */
+.banner {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 1rem; /* Padding for small screens */
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url(img/valentin-petrov-m-mal-01.webp);
+  background-size: cover;
+  background-position: center;
+  animation: bgZoomIn 4s ease-in-out infinite alternate;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url(img/after.webp);
+  background-size: cover;
+  background-position: top;
+  transform: scale(2);
+  animation: bgZoomOut 4s ease-in-out infinite alternate;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Keyframes */
+@keyframes bgZoomIn {
+  from {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes bgZoomOut {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(2);
+  }
+}
+
+/* SVG Text Animation */
+svg path {
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 0.1;
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: textAnimation 4s ease-in-out 1 forwards;
+}
+
+@keyframes textAnimation {
+  0% {
+    stroke-dashoffset: 50;
+  }
+  80% {
+    fill: transparent;
+  }
+  100% {
+    fill: #fff;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Form Styles */
+.unique-form {
+  max-width: 350px;
+  width: 80%;
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.6;
+  background: transparent;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(9px);
+  color: #fff;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5em;
+}
+
+label {
+  margin: 0.5rem 0;
+  width: 100%;
+}
+
+input[type="text"],
+input[type="password"] {
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.remember-me input {
+  margin-right: 0.5rem;
+}
+
+.login-button {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: #ad6506;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.forgot-password{
+  margin-top: 1rem;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+.sign-up {
+  margin-top: 1rem;
+  text-decoration: none;
+  color: rgb(255, 18, 18);
+  font-weight: bold;
+  
+}
+.sign-up:hover{
+  color: rgb(241, 162, 162); 
+}
+p {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .banner {
+    height: 100vh;
+    padding: 1rem;
+  }
+
+  .unique-form {
+    width: 90%;
+    max-width: 100%;
+    margin: 1rem 0;
+  }
+
+  h2 {
+    font-size: 1.2em;
+    margin-bottom: 1rem;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  .login-button {
+    width: 100%;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 400px) {
+  .banner {
+    height: 100vh;
+    padding: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.1em;
+  }
+
+  .unique-form {
+    padding: 1rem;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  .login-button {
+    padding: 0.5rem;
+    font-size: 0.9em;
+  }
+}
+
+
+.loading-btn {
+  position: relative;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: not-allowed;
+  pointer-events: none;
+  color: transparent; /* Hide the text */
+}
+
+.loading-btn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  margin-top: -8px;
+  margin-left: -8px;
+  border: 2px solid #fff;
+  border-top: 2px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
